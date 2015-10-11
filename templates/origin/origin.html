@@ -1,0 +1,135 @@
+<!doctype html>
+<html> 
+
+<head>
+<title>Build your personal site with django, python, heroku, git </title>
+
+<style>
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  }
+
+h1
+  {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  background-color:green;
+  padding-top:50px;
+  padding-bottom:50px;
+  color:white;
+  }
+
+.maincontent
+  {
+  margin-left:200px;
+  margin-right:200px;
+  }
+
+#contact
+  {
+  position:absolute;
+  left:20px;
+  top:0;
+  }
+
+#signin
+  {
+  position:absolute;
+  left:150px;
+  top:0;
+  }
+
+#author
+  {
+  position:absolute;
+  top:80px;
+  left:600px;
+  color:white;
+  }
+
+#adminsite
+  {
+  position:absolute;
+  left:250px;
+  top:0;
+  }
+
+.image
+  {
+  left:600px;
+  }
+
+</style>
+</head>
+
+
+<body>
+<meta charset=utf-8>
+<div class="header">
+    <h1>Build your personal website from scratch with Django</h1>
+    <p id="author">by Ibelin Gan</p>
+    <p id="contact"> <a href="contact/"><strong>Contact Me</a></p>
+    <p id="signin"> <a href="subscription/"><strong>Sign In</a></p>
+    <p id="adminsite"><a href="admin/"><strong>Admin Site</a></p>
+</div>
+
+<div class="maincontent">
+
+
+
+  <h3><a href="https://www.djangoproject.com">Django</a></h3>
+  <blockquote>Django is a high-level Python Web framework that encourages rapid development and clean, 
+  pragmatic design. Built by experienced developers, it takes care of much of the hassle of 
+  Web development, so you can focus on writing your app without needing to reinvent the wheel. 
+  It’s free and open source.It is internally based on Unicode and runs on a wide range of Python
+  versions from 2.4 to current versions including Python 3.</blockquote>
+  {% load staticfiles %}
+  <p class="image"><img src="{% static "origin/djangoarchitecture.png" %}" width=1000 height=600 alt="djangoarchitecture"/></p>
+
+  <h3><a href="https://www.python.org">Python</a></h3>
+  <blockquote>Python is a widely used general-purpose, high-level programming language. 
+  Its design philosophy emphasizes code readability, 
+  and its syntax allows programmers to express concepts in fewer lines of code than would 
+  be possible in languages such as C++ or Java. The language provides constructs intended 
+  to enable clear programs on both a small and large scale.</blockquote>
+
+  <h3><a href="http://www.heroku.com">Heroku</a></h3>
+  <blockquote>Heroku is a cloud platform as a service (PaaS) supporting several programming languages. 
+  Heroku was acquired by Salesforce.com in 2010. Heroku, one of the first cloud platforms, 
+  has been in development since June 2007, when it supported only the Ruby programming language, 
+  but has since added support for Java, Node.js, Scala, Clojure, Python, PHP and Go. 
+  The base operating system is Debian or, in the newest stack, the Debian-based Ubuntu.</blockquote>
+  {% load staticfiles %}
+  <p class="image"><img src="{% static "origin/herokuarchitecture.png" %}" width=1000 height=600 alt="herokuarchitecture"/></p>
+
+  <h3><a href="https://www.git-scm.com"> Git</a></h3>
+  <blockquote>Git is a free and open source distributed version control system designed to handle 
+  everything from small to very large projects with speed and efficiency. Git is easy to 
+  learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools 
+  like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, 
+  convenient staging areas, and multiple workflows.</blockquote>
+  {% load staticfiles %}
+  <p class="image"><img src="{% static "origin/git.png" %}" width=1000 height=600 alt="git"/></p>
+
+  <h3>Who uses it?</h3>
+  <ul>
+    <li><a class="reference external" href="http://www.mozilla.org/">Mozilla</a></li>
+    <li><a class="reference external" href="http://www.sourceforge.net/">SourceForge</a></li>
+    <li><a class="reference external" href="http://instagr.am/">Instagram</a></li>
+    <li><a class="reference external" href="http://www.npr.org/">NPR</a></li>
+    <li>… and many more</li>
+  </ul>
+
+  <div>
+   <p id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</p>
+   <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+   <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1442317131721");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+  </div>
+
+</div>
+</body>
+</html>

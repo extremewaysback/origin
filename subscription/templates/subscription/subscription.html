@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Subscription </title>
+<style>
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  }
+
+h1
+  {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  background-color:green;
+  padding-top:50px;
+  padding-bottom:50px;
+  color:white;
+  }
+  
+.maincontent
+  {
+  margin-left:230px;
+  margin-right:200px;
+  padding-top:50px;
+  padding-left:250px;
+  }
+
+input
+  {
+  width:250px;
+  } 
+  
+#submit
+  {
+  padding-top:10px;
+  padding-left:90px;
+
+  } 
+</style>
+</head>
+
+<body>
+<h1>Fill the following information to sign in</h1>
+<div class="maincontent">
+<form action="" method="POST">
+  <table>
+       {{form.as_table}}
+  </table>
+
+  {% csrf_token %}
+  <p id="submit"><input type='submit' value="subscribe"></p>
+</form>
+</div>
+</body>
+</html>

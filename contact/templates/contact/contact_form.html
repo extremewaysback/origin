@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Me</title>
+<style>
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  }
+  
+h1
+  {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  background-color:green;
+  padding-top:50px;
+  padding-bottom:50px;
+  color:white;
+  }
+
+.maincontent
+  {
+  margin-left:170px;
+  margin-right:200px;
+  padding-top:50px;
+  padding-left:250px;
+  }
+
+#submit
+  {
+  padding-left:180px;
+  }
+  
+input
+  {
+  width:250px;
+  }
+textarea
+  {
+  width:500px;
+  height:300px;
+</style>
+</head>
+<body>
+<h1>Contact Me</h1>
+<div class="maincontent">   
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <p id="submit"><input type="submit" value="Submit"></p>
+    </form>
+</div>
+</body>
+</html>
