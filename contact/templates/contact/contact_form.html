@@ -21,6 +21,36 @@ h1
   color:white;
   }
 
+#homepage
+  {
+  position:absolute;
+  left:20px;
+  top:0;
+  }
+
+#contact
+  {
+  position:absolute;
+  left:140px;
+  top:0;
+  }
+
+#signin
+  {
+  position:absolute;
+  left:270px;
+  top:0;
+  }
+
+#adminsite
+  {
+  position:absolute;
+  left:370px;
+  top:0;
+  }
+
+
+
 .maincontent
   {
   margin-left:170px;
@@ -46,6 +76,10 @@ textarea
 </head>
 <body>
 <h1>Contact Me</h1>
+    <p id="contact"> <a href="https://origint.heroku.com/contact/"><strong>Contact Me</a></p>
+    <p id="signin"> <a href="https://origint.heroku.com/subscription/"><strong>Sign In</a></p>
+    <p id="adminsite"><a href="https://origint.heroku.com/admin/"><strong>Admin Site</a></p>
+    <p id="homepage"><a href="https://origint.heroku.com"><strong>Homepage</a></p>
 <div class="maincontent">   
     {% if form.errors %}
         <p style="color: red;">
