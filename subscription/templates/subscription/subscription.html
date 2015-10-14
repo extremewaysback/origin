@@ -1,58 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title> Subscription </title>
-<style>
-body
-  {
-  margin:0px;
-  padding:0px;
-  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
-  }
-
-h1
-  {
-  padding:0px;
-  margin:0px;
-  text-align:center;
-  background-color:green;
-  padding-top:50px;
-  padding-bottom:50px;
-  color:white;
-  }
+{% extends "origin/base.html" %}
 
 
-
-#homepage
-  {
-  position:absolute;
-  left:20px;
-  top:0;
-  }
-
-#contact
-  {
-  position:absolute;
-  left:140px;
-  top:0;
-  }
-
-#signin
-  {
-  position:absolute;
-  left:270px;
-  top:0;
-  }
-
-#adminsite
-  {
-  position:absolute;
-  left:370px;
-  top:0;
-  }
-
-
-
+{% block style %}
 .maincontent
   {
   margin-left:230px;
@@ -72,16 +21,13 @@ input
   padding-left:90px;
 
   } 
-</style>
-</head>
+{% endblock %}
 
-<body>
-<h1>Fill the following information to sign in</h1>
-<p id="contact"> <a href="https://origint.heroku.com/contact/"><strong>Contact Me</a></p>
-<p id="signin"> <a href="https://origint.heroku.com/subscription/"><strong>Sign In</a></p>
-<p id="adminsite"><a href="https://origint.heroku.com/admin/"><strong>Admin Site</a></p>
-<p id="homepage"><a href="https://origint.heroku.com"><strong>Homepage</a></p>
-<div class="maincontent">
+
+
+{% block theme %} Fill the following information to sign in {% endblock %}
+
+{% block content %}
 <form action="" method="POST">
   <table>
        {{form.as_table}}
@@ -90,6 +36,4 @@ input
   {% csrf_token %}
   <p id="submit"><input type='submit' value="subscribe"></p>
 </form>
-</div>
-</body>
-</html>
+{% endblock %}

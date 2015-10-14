@@ -16,7 +16,6 @@ def register(request):
             #input the form's data into database
             s=defectdata.objects.create(product=cd['product'],layer=cd['layer'],lot=cd['lot'],
             wafer=cd['wafer'],scantime=cd['scantime'],defectcount=cd['defectcount'],remarks=cd['remarks'])
-            s.save()
             return HttpResponseRedirect('/database/success/')
     else:
         form=defectdataForm()

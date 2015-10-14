@@ -1,0 +1,113 @@
+<!doctype html>
+<html> 
+
+<head>
+<title>{% block title %}Build your personal site with django, python, heroku, git{% endblock %} </title>
+
+<style>
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  }
+
+h1
+  {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  background-color:green;
+  padding-top:50px;
+  padding-bottom:50px;
+  color:white;
+  }
+
+
+#homepage
+  {
+  position:absolute;
+  left:20px;
+  top:0;
+  }
+
+#contact
+  {
+  position:absolute;
+  left:140px;
+  top:0;
+  }
+
+#signin
+  {
+  position:absolute;
+  left:270px;
+  top:0;
+  }
+
+#adminsite
+  {
+  position:absolute;
+  left:370px;
+  top:0;
+  }
+#dms
+  {
+  position:absolute;
+  top:0;
+  left:510px;
+  }
+
+
+
+
+{% block style %}
+#author
+  {
+  position:absolute;
+  top:80px;
+  left:600px;
+  color:white;
+  }
+
+.maincontent
+  {
+  margin-left:200px;
+  margin-right:200px;
+  }
+
+.image
+  {
+  left:600px;
+  }
+{% endblock %}
+
+
+</style>
+</head>
+
+
+<body>
+<meta charset=utf-8>
+<div class="header">
+
+    <p id="contact"> <a href="https://origint.heroku.com/contact/"><strong>Contact Me</a></p>
+    <p id="signin"> <a href="https://origint.heroku.com/subscription/"><strong>Sign In</a></p>
+    <p id="adminsite"><a href="https://origint.heroku.com/admin/"><strong>Admin Site</a></p>
+    <p id="homepage"><a href="https://origint.heroku.com"><strong>Homepage</a></p>
+    <p id="dms"><a href="https://origint.heroku.com/database"><strong>DMS</a></p>
+    
+     
+    <h1>{% block theme %}Build your personal website from scratch with Django{% endblock %}</h1>
+    <p id="author">{% block author %}{% endblock %}</p>
+     
+     
+</div>
+
+<div class="maincontent">
+
+{% block content %}{% endblock %}
+
+</div>
+</body>
+</html>
