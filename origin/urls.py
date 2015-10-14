@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'^$',views.origin),  #show the origin homepage of the website
     url(r'^contact/',include('contact.urls')),
     url(r'^subscription/',include('subscription.urls')),
-    
+    url(r'^database/',include('database.urls')),
     
 ]

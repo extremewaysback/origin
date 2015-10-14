@@ -5,7 +5,9 @@ from django.http import HttpResponseRedirect
 from models import Subscribers
 from forms import SubscribersForm
 # Create your views here.
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 def subscription(request):
     if request.method=='POST':

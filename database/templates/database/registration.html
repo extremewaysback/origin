@@ -1,0 +1,102 @@
+<!DOCTYPE>
+<html>
+<head>
+<title> Subscription </title>
+<meta charset="utf-8">
+<style>
+body
+  {
+  margin:0px;
+  padding:0px;
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  }
+
+h1
+  {
+  padding:0px;
+  margin:0px;
+  text-align:center;
+  background-color:green;
+  padding-top:50px;
+  padding-bottom:50px;
+  color:white;
+  }
+
+
+#homepage
+  {
+  position:absolute;
+  left:20px;
+  top:0;
+  }
+
+#contact
+  {
+  position:absolute;
+  left:140px;
+  top:0;
+  }
+
+#signin
+  {
+  position:absolute;
+  left:270px;
+  top:0;
+  }
+
+#adminsite
+  {
+  position:absolute;
+  left:370px;
+  top:0;
+  }
+    
+ h3 {
+    padding-left:30px;
+    }
+
+ form  {
+    padding-left:560px;
+    size:200px;
+        }
+
+ input {
+    width:300px;
+    height:25px;
+       }
+ Textarea {
+    width:300px;
+       }
+
+</style>
+</head>
+
+<body>
+
+<h1>Welcome to DMS</h1>
+<p id="contact"> <a href="https://origint.heroku.com/contact/"><strong>Contact Me</a></p>
+<p id="signin"> <a href="https://origint.heroku.com/subscription/"><strong>Sign In</a></p>
+<p id="adminsite"><a href="https://origint.heroku.com/admin/"><strong>Admin Site</a></p>
+<p id="homepage"><a href="https://origint.heroku.com"><strong>Homepage</a></p>
+<div class="container">
+<form action="" method="POST" >   
+     <label>Product Name:</label>
+     <p>{{form.product}}</p>
+     <label>Layer:</label>
+     <p>{{form.layer}}</p>
+     <label>Lot:</label>
+     <p>{{form.lot}}</p>
+     <label>Wafer:</label>
+     <p>{{form.wafer}}</p>
+     <label>Defect Count:</label>
+     <p>{{form.defectcount}}</p>
+     <label>Scan date and time:</label>
+     <p>{{form.scantime}}</p>
+     <label>Remarks:</label>
+     <p>{{form.remarks}}</p>
+     {% csrf_token %}
+     <input type='submit' value="submit">
+</form>
+</div>
+</body>
+</html>

@@ -6,6 +6,10 @@ from django.core.mail import send_mail
 from contact.forms import ContactItemForm   #import forms into views
 from contact.models import ContactItem 
 import smtplib
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 # Create your views here.
 #contact_form has the attributes of ===subject & email & message
