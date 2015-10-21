@@ -19,9 +19,10 @@ import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$',views.origin),  #show the origin homepage of the website
+    url(r'^$',views.origin, name='origin'),  #show the origin homepage of the website
     url(r'^contact/',include('contact.urls')),
     url(r'^subscription/',include('subscription.urls')),
     url(r'^database/',include('database.urls')),
+    url(r'^experience/$',views.experice, name='experience'),
     
 ]

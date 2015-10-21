@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'contact',
     'subscription',
     'database',
+    'polls',
     
 )
 

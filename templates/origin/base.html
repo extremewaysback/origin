@@ -48,18 +48,22 @@ h1
 #adminsite
   {
   position:absolute;
-  left:370px;
+  left:580px;
   top:0;
   }
 #dms
   {
   position:absolute;
   top:0;
-  left:510px;
+  left:370px;
   }
 
-
-
+#experience
+  {
+  position:absolute;
+  top:0;
+  left:450px;
+  }
 
 {% block style %}
 #author
@@ -91,18 +95,19 @@ h1
 <meta charset=utf-8>
 <div class="header">
 
-    <p id="contact"> <a href="https://origint.heroku.com/contact/"><strong>Contact Me</a></p>
-    <p id="signin"> <a href="https://origint.heroku.com/subscription/"><strong>Sign In</a></p>
-    <p id="adminsite"><a href="https://origint.heroku.com/admin/"><strong>Admin Site</a></p>
-    <p id="homepage"><a href="https://origint.heroku.com"><strong>Homepage</a></p>
-    <p id="dms"><a href="https://origint.heroku.com/database"><strong>DMS</a></p>
+    <p id="contact"> <a href="{% url 'contact' %}"><strong>Contact Me</a></p>
+    <p id="signin"> <a href="{% url 'subscription' %}"><strong>Sign In</a></p>
+    <p id="adminsite"><a href="../admin/"><strong>Admin Site</a></p>
+    <p id="homepage"><a href="{% url 'origin' %}"><strong>Homepage</a></p>
+    <p id="dms"><a href="{% url 'database' %}"><strong>DMS</a></p>
+    <p id="experience"><a href="{% url 'experience' %}"><strong>Experience</a></p>
     
      
     <h1>{% block theme %}Build your personal website from scratch with Django{% endblock %}</h1>
     <p id="author">{% block author %}{% endblock %}</p>
-     
-     
+          
 </div>
+
 
 <div class="maincontent">
 

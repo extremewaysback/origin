@@ -1,0 +1,43 @@
+{% extends "origin/base.html" %}
+
+{% block content %}
+
+
+<div>
+<h3>1.Reverse resolution of URLs</h3>
+
+
+
+<p>===Django provides a solution such that the URL mapper is the only repository of the URL design. You feed it with your URL conf and then it can be used in both directions:</p>
+ 
+<p>. Starting with a URL requested by the user/browser, it calls the right Django view providing any arguments it might need with their values as extracted from the URL.</p>
+
+<p>. Starting with the identification of the corresponding Django view plus the values of arguments that would be passed to it, obtain the associated URL.</p>
+
+<p>The second one is what is known as reverse resolution of URLs, reverse URL matching, reverse URL lookup, or simply URL reversing.</p>
+
+
+
+<p>Django provides tools for performing URL reversing that match the different layers where URLs are needed:</p>
+<p>. In templates: Using the url template tag.</p>
+<p>. In python code: Using the <django.core.urlresolvers.reverse()> function.</p>
+<p>. In higher level code related to handling of URLs of Django model instances: The get_absolute_url() method.</p>
+
+<P>For example, url(r’^articles/([0-9]{4}/$’, views. year_archive, name=’news-year-archive’)</p>
+
+<p> ===>>>Overall, this is a technique which maps the name defined in url() with the related view no matter how the url address of the view changes</p>
+
+<br />
+</div>
+
+<div>
+<h3>2.Absolute URL & Relative URL</h3>
+
+<p>Absolute URL—— "https://origint.herokuapp.com/admin/"</p>
+
+<p>Relative URL—— "../admin/"</p>
+
+<p>===>>>This is a good technique to refer to the view which don't have a name defined in url.</p>
+</div>
+
+{% endblock %}
