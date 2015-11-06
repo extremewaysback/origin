@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'origin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-'''
+
 
 DATABASES = {
     'default': {
@@ -93,14 +93,14 @@ DATABASES = {
 }
 '''
 import dj_database_url
-'''
+
 DATABASES={'default':{'ENGINE':'django.db.backends.postgresql_psycopg2',
                       'NAME':dj_database_url.config('postgres://dnnupxvwyuwncc:Qbn7_Bs0Zkpjz7ysTaU_Yah9q3@ec2-54-227-254-13.compute-1.amazonaws.com:5432/d1sfa366afn6fs'),
                       }
           }
-'''
-DATABASES = {'default': dj_database_url.config(default='DATABASE_URL')}
 
+DATABASES = {'default': dj_database_url.config(default='DATABASE_URL')}
+'''
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
