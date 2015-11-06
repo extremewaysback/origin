@@ -41,8 +41,13 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
+    #'threadedcomments',
+    #'django_comments',
+    #'django.contrib.sites',
     
 )
+
+#COMMENTS_APP='threadedcomments'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,14 +83,23 @@ WSGI_APPLICATION = 'origin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+'''
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Extremeways',
     }
 }
-
+'''
+import dj_database_url
+'''
+DATABASES={'default':{'ENGINE':'django.db.backends.postgresql_psycopg2',
+                      'NAME':dj_database_url.config('postgres://dnnupxvwyuwncc:Qbn7_Bs0Zkpjz7ysTaU_Yah9q3@ec2-54-227-254-13.compute-1.amazonaws.com:5432/d1sfa366afn6fs'),
+                      }
+          }
+'''
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

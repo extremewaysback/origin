@@ -1,21 +1,11 @@
 {% extends "origin/base.html" %}
 
-
-
-{% block theme %}
-
-Helpful Techniques
-
-{% endblock %}
-
-
-
+{% block theme %}Helpful Techniques{% endblock %}
 
 
 {% block content %}
 <div>
 <h3>1.Reverse resolution of URLs</h3>
-
 
 
 <p>===Django provides a solution such that the URL mapper is the only repository of the URL design. You feed it with your URL conf and then it can be used in both directions:</p>
@@ -43,11 +33,21 @@ Helpful Techniques
 <div>
 <h3>2.Absolute URL & Relative URL</h3>
 
-<p>Absolute URL—— "https://origint.herokuapp.com/admin/"</p>
+  <p>Absolute URL—— "https://origint.herokuapp.com/admin/"</p>
 
-<p>Relative URL—— "../admin/"</p>
+  <p>Relative URL—— "../admin/"</p>
 
-<p>===>>>This is a good technique to refer to the view which don't have a name defined in url.</p>
+  <p>===>>>This is a good technique to refer to the view which don't have a name defined in url.</p>
 </div>
 
+
+<div>
+<h3>3.Mac+ pip install psycopg2===Error:pg_config executable not found</h3>
+  <p>Solution:</p>
+
+  <p>$ export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH”</p>
+
+  <p>$ pip install psycopg2</p>
+
+</div>
 {% endblock %}
