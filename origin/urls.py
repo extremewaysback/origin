@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^subscription/',include('subscription.urls')),
     url(r'^database/',include('database.urls')),
     url(r'^experience/$',views.experice, name='experience'),
-    url(r'^articles/comments/',include('django_comments.urls')),
+    #url(r'^articles/comments/',include('django_comments.urls')),
     
 ]
