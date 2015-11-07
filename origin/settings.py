@@ -88,19 +88,14 @@ WSGI_APPLICATION = 'origin.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Extremeways',
+        'NAME': 'ddk5c3r8jv6eao',
+        'USER':'wtzvndsrnapvjl',
+        'PASSWORD':'83n2AdqUEEAGjBmhIHQ8-Cfh0X',
+        'HOST':'ec2-107-21-221-107.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
-'''
-import dj_database_url
 
-DATABASES={'default':{'ENGINE':'django.db.backends.postgresql_psycopg2',
-                      'NAME':dj_database_url.config('postgres://dnnupxvwyuwncc:Qbn7_Bs0Zkpjz7ysTaU_Yah9q3@ec2-54-227-254-13.compute-1.amazonaws.com:5432/d1sfa366afn6fs'),
-                      }
-          }
-
-DATABASES = {'default': dj_database_url.config(default='DATABASE_URL')}
-'''
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -126,6 +121,3 @@ STATICFILES_DIRS=(
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT='staticfiles'
 
-
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
