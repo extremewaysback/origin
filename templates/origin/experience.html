@@ -8,25 +8,26 @@
 <h3>1.Reverse resolution of URLs</h3>
 
 
-<p>===Django provides a solution such that the URL mapper is the only repository of the URL design. You feed it with your URL conf and then it can be used in both directions:</p>
+<p>Django provides a solution such that the URL mapper is the only repository of the URL design. You feed it with your URL conf and then it can be used in both directions:</p>
  
-<p>. Starting with a URL requested by the user/browser, it calls the right Django view providing any arguments it might need with their values as extracted from the URL.</p>
+<p>&nbsp>>>Starting with a URL requested by the user/browser, it calls the right Django view providing any arguments it might need with their values as extracted from the URL.</p>
 
-<p>. Starting with the identification of the corresponding Django view plus the values of arguments that would be passed to it, obtain the associated URL.</p>
+<p>&nbsp>>>Starting with the identification of the corresponding Django view plus the values of arguments that would be passed to it, obtain the associated URL.</p>
 
 <p>The second one is what is known as reverse resolution of URLs, reverse URL matching, reverse URL lookup, or simply URL reversing.</p>
 
 
 
 <p>Django provides tools for performing URL reversing that match the different layers where URLs are needed:</p>
-<p>. In templates: Using the url template tag.</p>
-<p>. In python code: Using the <django.core.urlresolvers.reverse()> function.</p>
-<p>. In higher level code related to handling of URLs of Django model instances: The get_absolute_url() method.</p>
+<p>&nbsp>>> In templates: Using the url template tag.</p>
+<p>&nbsp>>> In python code: Using the <django.core.urlresolvers.reverse()> function.</p>
+<p>&nbsp>>> In higher level code related to handling of URLs of Django model instances: The get_absolute_url() method.</p>
 
 <P>For example, url(r’^articles/([0-9]{4}/$’, views. year_archive, name=’news-year-archive’)</p>
 
 <p> ===>>>Overall, this is a technique which maps the name defined in url() with the related view no matter how the url address of the view changes</p>
-
+<p>
+<p>
 <br />
 </div>
 
@@ -38,16 +39,46 @@
   <p>Relative URL—— "../admin/"</p>
 
   <p>===>>>This is a good technique to refer to the view which don't have a name defined in url.</p>
+  <p>
+  <p>
+  <p>
+  <p>
+  <br />
 </div>
 
 
 <div>
-<h3>3.Mac+ pip install psycopg2===Error:pg_config executable not found</h3>
+<h3>3.Issue: Mac+ pip install psycopg2>>>Error:pg_config executable not found</h3>
   <p>Solution:</p>
 
   <p>$ export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH”</p>
 
   <p>$ pip install psycopg2</p>
+  <p>
+  <p>
+  <p>
+  <p>
+  <br />
+</div>
 
+
+<div>
+<h3>4.Encoding error (not to support characters like Chinese)</h3>
+  <p>Solution:</p>
+
+  <p>#To get the current default encoding system</p>
+  <p>$ import sys</p>
+  <p>$ print sys.getdefaultencoding()
+  <p>>>>ascii #the python default encoding system, in order to be compatible characters like Chinese, you have to set to utf-8 encoding system.
+  <p>
+  <p>#set default encoding within your views.py file in front as following:
+  <p>$ import sys
+  <p>$ reload(sys)
+  <p>$ sys.setdefaultencoding('utf-8')
+  <p>
+  <p>
+  <p>
+  <p>
+  <br />
 </div>
 {% endblock %}
