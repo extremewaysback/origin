@@ -1,0 +1,27 @@
+hello world!
+<html>
+
+<form action="" method="POST" >   
+     <label>Product Name:</label>
+     <p>{{form.product}}</p>
+     <label>Layer:</label>
+     <p>{{form.layer}}</p>
+     <label>Lot:</label>
+     <p>{{form.lot}}</p>
+     <label>Wafer:</label>
+     <p>{{form.wafer}}</p>
+     <label>Defect Count:</label>
+     <p>{{form.defectcount}}</p>
+     <label>Scan date and time:</label>
+     <p>{{form.scantime}}</p>
+     <label>Remarks:</label>
+     <p>{{form.remarks}}</p>
+     <label>Input your full file name:</label>
+     <p>{{form.f}}</p>
+     {{form.x}}
+     {{form.y}}
+     {% csrf_token %}
+     <input type='submit' value="submit">
+</form>
+
+</html>

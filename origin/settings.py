@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
+    'CpMap',
     #'threadedcomments',
     #'django_comments',
     #'django.contrib.sites',
