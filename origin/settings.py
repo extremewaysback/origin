@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
-    'bootstrap3',
+    #'bootstrap3',
     #'CpMap',
     #'threadedcomments',
     #'django_comments',
