@@ -1,14 +1,11 @@
-{% extends "origin/base.html" %}
+{% extends "origin/newbase.html" %}
 
 
 {% block style %}
-.maincontent
-  {
-  margin-left:230px;
-  margin-right:200px;
-  padding-top:50px;
-  padding-left:250px;
-  }
+
+form {
+     padding-left: 280px;
+     }
 
 input
   {
@@ -27,7 +24,7 @@ input
 
 {% block theme %} Fill the following information to sign in {% endblock %}
 
-{% block content %}
+{% block section %}
 <form action="" method="POST">
   <table>
        {{form.as_table}}

@@ -1,13 +1,51 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from .forms import cpdataForm
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponseRedirect,HttpResponse
+from .forms import cpdataForm, UploadFileForm
 from .models import cpdata
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-# Create your views here.
+#Imaginary function to handle an uploaded file
+from csv_to_graphics import cp_color
+from csv_handler import csv_to_lists
 
+
+def upload_file(request):  
+    if request.method=='POST':
+        #request.POST dictionary and request.FILES dictionary
+        form=UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            #Notice that we have to pass request.FILES into the 
+            #form's constructor; this is how file data gets bound into
+            #a form.
+            lists=csv_to_lists(request.FIELS['file'])
+            filename=request.FIELS['file']
+            return HttpResponseRedirect('/charts/success/')
+            #return render(request,'CpMap/upload.html',{'txtfile':txtfile,'filename':filename})
+    else:
+            form=UploadFileForm()
+    return render(request,'CpMap/upload.html',{'form':form})
+       
+def success(request):
+    return     
+
+    
+
+def cpmap(request):
+    #open a file containing cpdata
+    
+    #input cpdata into lists and plot the cp Mapping
+    
+    #Embed the Mapping into HTML
+    
+    #return the HTML
+    
+    
+    return HttpResponse('hello world')
+
+# Create your views here.
+'''
 def cpmap(request):
     if request.method=='POST':
         form=cpdataForm(request.POST)
@@ -18,7 +56,7 @@ def cpmap(request):
         form=cpdataForm()
     return render(request,'CpMap/cpmap.html',{'form':form})
 
-'''   
+
 def register(request):
     if request.method=='POST':
         form=defectdataForm(request.POST) #interface with html
@@ -37,7 +75,7 @@ def register(request):
 
 from django.http import HttpResponse
 def barchart(request):
-
+    
     #instantiate a drawing object
     import mycharts
     d = mycharts.MyBarChartDrawing()
@@ -56,11 +94,12 @@ def barchart(request):
 
     if 'title' in request:
         d.title.text = request['title']
-  
+    
 
     #get a GIF (or PNG, JPG, or whatever)
     binaryStuff = d.asString('gif')
     return HttpResponse(binaryStuff, 'image/gif')
+    
     
     
 

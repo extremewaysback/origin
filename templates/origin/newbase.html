@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html> 
+<head>
+   <meta charset="utf-8">
+   <title>{% block title %}Build Your Personal Website from Scratch with Django{% endblock %} </title>
+   {% load staticfiles %}
+   <link rel="stylesheet" href="{% static 'origin/newbasestyle.css' %}">
+   <style>
+   {% block style %}{% endblock %}
+   </style>
+</head>
+
+
+<body><!--The following is the body of the html-->
+<nav>
+   <ul>
+      <li><strong><div><a href="{% url 'origin' %}">OriginT</a> <span>by Ibelin Gan</span></div></li>      
+      <li><a href="{% url 'reverse_resolution_of_urls' %}"><strong>Techniques</a></li>
+      <li><a href="{% url 'contact' %}"><strong>Contact Me</a></li>
+      <li><a href="{% url 'subscription' %}"><strong>Sign In</a></li>
+      <li><a href="{% url 'database' %}"><strong>DMS</a></li>
+      <li><a href="../admin/"><strong>Admin Site</a></li>
+   </ul>
+</nav>
+
+
+<header>
+    <h2>{% block theme %}<span>Build your personal website with Django from Scratch</span>{% endblock %}</h2>
+    <p id="author">{% block author %}{% endblock %}</p>        
+</header>
+
+
+
+<section>
+    {% block section %}
+    <article>
+    <header>
+      <h2><a href="https://www.python.org">Introduction of Django</a></h2>
+    </header>
+    
+    <p>Django is a high-level Python Web framework that encourages rapid development and clean, 
+  pragmatic design. Built by experienced developers, it takes care of much of the hassle of 
+  Web development, so you can focus on writing your app without needing to reinvent the wheel. 
+  It’s free and open source.It is internally based on Unicode and runs on a wide range of Python
+  versions from 2.4 to current versions including Python 3.</p>
+     <figure>
+        <img src="{% static "origin/djangoarchitecture.png" %}" width=104% height=150% alt="djangoarchitecture"/>
+        <figcaption>
+             Fig. 1 : The Architecture of Django
+        </figcaption>
+     </figure>
+    </article>
+  
+
+    <article>
+    <header>
+      <h2><a href="https://www.python.org">Introduction of Python</a></h2>
+    </header>
+    
+    <p>Django is a package of Python. So Python is a prerequisite for Django. Python is a widely used general-purpose, high-level programming language. 
+  Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would 
+  be possible in languages such as C++ or Java. The language provides constructs intended 
+  to enable clear programs on both a small and large scale.</p>
+     <figure>
+        <img src="{% static "origin/languages.jpg" %}" width=104% height=600 alt="programming languages"/>
+        <figcaption>
+             Fig. 2 : Popularity of Programming Languages in 2015
+        </figcaption>
+     </figure>
+   </article>
+
+
+    <article>
+    <header>
+      <h2><a href="http://www.heroku.com">Introduction of Heroku</a></h2>
+    </header>
+    
+    <p>After constructing your website, you need a platform for deployment. Heroku is a cloud platform as a service (PaaS) supporting several programming languages
+  and automates your deployment with few code. Heroku, one of the first cloud platforms, 
+  has been in development since June 2007, when it supported only the Ruby programming language, 
+  but has since added support for Java, Node.js, Scala, Clojure, Python, PHP and Go. 
+  The base operating system is Debian or, in the newest stack, the Debian-based Ubuntu.</p>
+     <figure>
+        <img src="{% static "origin/herokuarchitecture.png" %}" width=104% height=600 alt="herokuarchitecture"/>
+        <figcaption>
+             Fig. 3 : Architecture of Heroku
+        </figcaption>
+     </figure>
+   </article>
+
+
+    <article>
+    <header>
+      <h2><a href="https://www.git-scm.com">Introduction of Git</a></h2>
+    </header>
+    
+    <p>Git is a free and open source distributed version control system designed to handle 
+  everything from small to very large projects with speed and efficiency. Git is easy to 
+  learn and has a tiny footprint with lightning fast performance. It outclasses SCM tools 
+  like Subversion, CVS, Perforce, and ClearCase with features like cheap local branching, 
+  convenient staging areas, and multiple workflows.</p>
+  
+     <figure>
+        <img src="{% static "origin/git.png" %}" width=104% height=600 alt="git"/>
+        <figcaption>
+             Fig. 4 : Architecture of Git
+        </figcaption>
+     </figure>
+   </article>
+
+
+    <article>
+           <p id="HCB_comment_box">is loading comments...</p>
+           <link rel="stylesheet" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+           <script type="text/javascript" id="hcb"> 
+           if(!window.hcb_user){hcb_user={};} 
+           (function(){var s=document.createElement("script"), 
+           l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), 
+           h="//www.htmlcommentbox.com";
+           s.setAttribute("type","text/javascript");
+           s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1442317131721");
+           if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
+           </script>
+    </article>
+{% endblock %}
+</section>
+
+
+
+<aside>
+	<h2>Post Cloud</h2>
+	<ul class="tag-cloud">
+		<li><a href="{% url 'reverse_resolution_of_urls' %}" rel="tag" class="w2">reverse resolution of URLs</a></li>
+		<li><a href="" rel="tag" class="w8">apple</a></li>
+		<li><a href="" rel="tag" class="w3">css</a></li>
+		<li><a href="" rel="tag" class="w6">firefox</a></li>
+		<li><a href="" rel="tag" class="w8">google</a></li>
+		<li><a href="" rel="tag" class="w2">html</a></li>
+		<li><a href="" rel="tag" class="w2">internet explorer</a></li>
+		<li><a href="" rel="tag" class="w6">iphone</a></li>
+		<li><a href="" rel="tag" class="w9">css3</a></li>
+		<li><a href="" rel="tag" class="w2">ipod</a></li>
+		<li><a href="" rel="tag" class="w5">javascript</a></li>
+		<li><a href="" rel="tag" class="w1">jquery</a></li>
+		<li><a href="" rel="tag" class="w2">mac</a></li>
+		<li><a href="" rel="tag" class="w4">opera</a></li>
+		<li><a href="" rel="tag" class="w2">rss</a></li>
+		<li><a href="" rel="tag" class="w10">html5</a></li>
+		<li><a href="" rel="tag" class="w2">web</a></li>
+		<li><a href="" rel="tag" class="w8">web 2.0</a></li>
+		<li><a href="" rel="tag" class="w3">windows</a></li>
+		<li><a href="" rel="tag" class="w2">yahoo</a></li>
+		<li><a href="" rel="tag" class="w7">youtube</a></li>
+	</ul>
+</aside>
+
+</body>
+</html>

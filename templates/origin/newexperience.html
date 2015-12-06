@@ -1,0 +1,36 @@
+{% extends "origin/newbase.html" %}
+
+{% block theme %}Reverse resolution of URLs{% endblock %}
+
+<style>
+{% block style %}
+article, p, li, div{
+text-align:left;
+}
+{% endblock %}
+</style>
+
+{% block section %} 
+<article>
+    <header>
+      <h2>Reverse resolution of URLs</h2>
+      <div>
+          <p>Django provides a solution such that the URL mapper is the only repository of the URL design. You feed it with your URL conf and then it can be used in both directions:</p>
+          <ul>
+             <li>Starting with a URL requested by the user/browser, it calls the right Django view providing any arguments it might need with their values as extracted from the URL.</li>
+             <li>Starting with the identification of the corresponding Django view plus the values of arguments that would be passed to it, obtain the associated URL.</li>
+          </ul>
+          <p>The second one is what is known as reverse resolution of URLs, reverse URL matching, reverse URL lookup, or simply URL reversing.
+          Django provides tools for performing URL reversing that match the different layers where URLs are needed:</p>
+          <ul>
+             <li>In templates: Using the url template tag.</li>
+             <li>In python code: Using the &lt;django.core.urlresolvers.reverse()&gt; function.</li>
+             <li>In higher level code related to handling of URLs of Django model instances: The get_absolute_url() method.</li>
+          </ul>
+          <p>For example, url(r’^articles/([0-9]{4}/$’, views. year_archive, name=’news-year-archive’).</p>
+          <p>Overall, this is a technique which maps the name defined in url() with the related view no matter how the url address of the view changes.</p>
+      <p>
+      </div>
+    </header>
+</article>
+{% endblock %}

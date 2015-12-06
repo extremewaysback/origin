@@ -1,20 +1,17 @@
-{% extends "origin/base.html" %}
+{% extends "origin/newbase.html" %}
 
 
 {% block style %}
-.maincontent {
-  margin-left:170px;
-  margin-right:200px;
-  padding-top:50px;
-  padding-left:250px;
-  }
-  
+
+form {
+     padding-left:150px;
+     }
+    
 
 #submit {
-  padding-left:180px;
+  margin-left:150px;
   }
 
-  
 input{
   width:250px;
   }
@@ -32,7 +29,7 @@ textarea{
 
 
 
-{% block content %}
+{% block section %}
     <form action="" method="post">
         <table>
             {{ form.as_table }}

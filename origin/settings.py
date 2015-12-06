@@ -41,7 +41,8 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
-    'CpMap',
+    'bootstrap3',
+    #'CpMap',
     #'threadedcomments',
     #'django_comments',
     #'django.contrib.sites',
@@ -118,7 +119,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=(
    os.path.join(BASE_DIR, "static"),
                   )
-
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT='staticfiles'
 

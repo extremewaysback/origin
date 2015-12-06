@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8"><!--define char_encoding of this page-->
+     <title>HTML5 and CSS3 Test</title><!--define the page tag title-->
+     {% load staticfiles %}
+     <link rel="stylesheet" href="{% static 'origin/style.css' %}"><!--rel==Required, specifies the relationship between the current document and the linked document-->
+     <!--href==hypertext reference, specifies the location of the linked document-->
+     
+     <script src="script.js"></script>
+     <!--this tag is used to define a client-side script, such as a JavaScript-->
+     <!--contains scripting statements, or it points to an external script file through the src (source) attribute-->
+     <!--Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content-->
+</head>
+
+
+<body>
+
+
+<!--the content inside the <main> element should be unique to the document.-->
+<main>
+    <!--This tag defines a set of navigation links-->
+    <!--Notice that NOT all links of a document should be inside a <nav> element. The <nav> element is intended only for major block of navigation links.-->
+    <nav>
+      <a href="">HTML</a> ........
+      <a href="">CSS</a> ........
+      <a href="">JavaScript</a> .......
+      <a href="">jQuery</a>
+    </nav>
+
+    
+    
+    <!--this tag specifies independent, self-contained content-->
+    <!--An article should make sense on its own and it should be possible to distribute it independently from the rest of the site-->
+    <!--Potential sources for article element: Forum post; blog post; news story; comment-->
+
+    <article>
+    
+          <!--THIS tag represents a container for introductory content or a set of navigational links-->
+          <!--Header contains: 1.one or more heading elements(<h1>-<h6.>); 2.logo or icon; 3. authorship information-->
+          <!--You can have several <header> elements in one document-->
+      <header>
+        <!--span tag is used to group inline-elements in a document, provides no visual change by itself-->
+        <!--span tag provides a way to add a hook to a part of a text or a part of a document-->
+        <h1>Most <span style="color:blue">important</span> heading here</h1>
+        <h3>Less important heading here</h3>
+        <p>Some additional information here.</p>
+      </header>
+
+      
+      <footer>
+        <p>footer</p>
+        <p>Posted by: Hege Refsnes</p>
+        <p>Contact information: <a href="mailto:someone@example.com">
+        someone@example.com</a>.</p>
+      </footer>
+    </article>
+    
+    
+    <!--Generic section used to group different articles for different purposes or subjects, or to define the different sections of a single article. Generally used with a header-->
+    
+    <section>
+       <h1>WWF</h1>
+       <p>The World Wide Fund for Nature (WWF) is....</p>
+    </section>
+    
+    
+    <!--The aside tag defines some content aside from the content it is placed in.-->
+    <!--The aside content should be related to the surrounding content-->
+    <aside>
+       <h4>Epcot Center</h4>
+       <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+    </aside>
+    
+    
+    <!--figure element to make up a photo in a document-->
+    <!--this tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.-->
+    
+    <figure>
+        <!--tag like functions-->
+        <img src="{% static 'origin/structure.png' %}" alt="The Git Structure" width="404" height="330">
+        <figcaption>Fig.1 -- The Git Structure</figcaption>
+    </figure>
+</main> 
+</body>
+</html>

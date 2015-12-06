@@ -1,0 +1,12 @@
+header {
+    color: #007e99;
+    font-size:0.5em;
+    padding: 20px 50 px;
+    }
+    
+aside {
+   float:right;
+   padding:70px 0 30 px;
+   position:relative;
+   width:25%;
+   }
