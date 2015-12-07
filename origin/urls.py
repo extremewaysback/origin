@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'test/$',views.test, name='test'),
     url(r'w3school/$',views.w3school,name='w3school'),
     url(r'newbase/$',views.newbase,name='newbase'),
+    url(r'deployment/$',views.deployment, name='deployment'),
     #url(r'newexperience/$',views.newexperience,name='newexperience'),
     #url(r'^charts/',include('CpMap.urls'),name='cpmap'),
     #url(r'^articles/comments/',include('django_comments.urls')),

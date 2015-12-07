@@ -20,3 +20,7 @@ def newbase(request):
 def newexperience(request):
     return render(request, "origin/newexperience.html")
     
+    
+def deployment(request):
+    return render(request, "origin/deployment.html")
+    

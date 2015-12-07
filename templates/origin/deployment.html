@@ -1,0 +1,28 @@
+{% extends "origin/newbase.html" %}
+
+{% block theme %}Deployment with git to Heroku{% endblock %}
+
+
+{% block style %}
+p li{
+text-align:left;
+}
+article {
+        padding-left: 250px;
+        padding-top:30px;
+        }
+
+{% endblock %}
+
+{% block section %}
+<article>
+        <p>Few lines of code to deploy your project on Heroku:</p>
+        <ol>
+             <li>$git init (init a git repository)</li>
+             <li>$git add .</li>
+             <li>$git commit -m "NAME" (actually record the snapshot  with a NMAE)</li>
+             <li>$heroku login (log into your heroku count)</li>
+             <li>$git push https://git.heroku.com/YOURAPPNAMEonHeroku.git</li>
+        </ul>
+</article>
+{% endblock %}

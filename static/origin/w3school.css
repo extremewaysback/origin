@@ -70,8 +70,7 @@ footer {
 				color: yellow;
 			}
 			
-			
-			
+				
 		nav {
 			font-size: 1.5em;
 			margin: 5px 0;
@@ -100,7 +99,8 @@ footer {
 			float: left;
 			padding: 35px 0;
 			position: relative;
-			width: 70%
+			width: 70%;
+			background-color:blue;
 		}
 		
 			section article {
@@ -177,8 +177,9 @@ footer {
 
 			footer {
 				clear: both;
-				color: #777;
-				padding: 10px 50px
+				color: red;
+				padding: 10px 50px;
+				background-color:red;
 			}
 
 			header:hover, 
