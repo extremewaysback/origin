@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'deployment/$',views.deployment, name='deployment'),
     #url(r'newexperience/$',views.newexperience,name='newexperience'),
     #url(r'^charts/',include('CpMap.urls'),name='cpmap'),
-    #url(r'^articles/comments/',include('django_comments.urls')),
-    
+    #url(r'^articles/comments/',include('django_comments.urls')),    
 ]
+
+urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]

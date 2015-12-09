@@ -41,14 +41,21 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
+    'disqus',
     #'bootstrap3',
     #'CpMap',
     #'threadedcomments',
     #'django_comments',
     #'django.contrib.sites',
-    
 )
 
+INSTALLED_APPS+=(
+      'threadedcomments',
+      'django_comments',
+      'django.contrib.sites',
+      )
+COMMENTS_APP='threadedcomments'
+SITE_ID=3
 #COMMENTS_APP='threadedcomments'
 
 MIDDLEWARE_CLASSES = (
