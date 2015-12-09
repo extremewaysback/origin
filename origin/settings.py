@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'subscription',
     'database',
     'polls',
-    'disqus',
+    #'disqus',
     #'bootstrap3',
     #'CpMap',
     #'threadedcomments',
