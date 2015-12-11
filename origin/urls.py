@@ -33,4 +33,4 @@ urlpatterns = [
     #url(r'^articles/comments/',include('django_comments.urls')),    
 ]
 
-#urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]
+urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]

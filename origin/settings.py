@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     #'django_comments',
     #'django.contrib.sites',
 )
-'''
+
 INSTALLED_APPS+=(
       'threadedcomments',
       'django_comments',
@@ -56,7 +56,7 @@ INSTALLED_APPS+=(
       )
 COMMENTS_APP='threadedcomments'
 SITE_ID=3
-'''
+
 
 
 #COMMENTS_APP='threadedcomments'
