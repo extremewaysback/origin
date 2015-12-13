@@ -24,3 +24,6 @@ def newexperience(request):
 def deployment(request):
     return render(request, "origin/deployment.html")
     
+def ajax(request):
+    return render(request, "origin/ajax.html")
+    

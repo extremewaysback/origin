@@ -1,0 +1,67 @@
+{% extends "origin/newbase.html" %}
+
+{% block title %}Ajax: A New Approach to Web Applications{% endblock %}
+
+{% block theme %}Ajax: A New Approach to Web Applications{% endblock %}
+
+
+{% block style %}
+article, p, li{
+                   text-align:left;
+                   }
+{% endblock %}
+
+{% block section %} 
+<article>
+          <p>Ajax isn't a technology. It's really several technologies, each flourishing in its own right, coming together in powerful new ways. Ajax incorporates:</p>
+          <ul>
+             <li>standards-based presentation using XHTML and CSS;</li>
+             <li>dynamic display and interaction using the Document Object Model;</li>
+             <li>data interchange and manipulation using XML and XSLT;</li>
+             <li>asynchronous data retrieval using XMLHttpRequest;</li>
+             <li>and JavaScript binding everything together.</li>
+          </ul>
+          <p>The classic web application model works like this: Most user actions in the interface trigger an HTTP request back to a web server.
+             The server does some processing--retrieving data, crunching numbers, taling to various legacy systems--and then returns an HTML page
+             to the client. It's a model adapted from the Web's original use as a hypertext medium, but as fans of The Elements of User Experience
+             know, what makes the Web good for hypertext doesn't necessarily make it good for software applications. 
+          </p>
+          
+          <figure>
+             {% load staticfiles %}
+             <img src="{% static "origin/ajax.png" %}" width=104% height=60% alt="ajax"/>
+             <figcaption>
+                Fig. 1 : The traditional model for web applications(left) compared to the Ajax model(right).
+             </figcaption>
+          </figure>
+          
+          <p>An Ajax application eliminates the start-stop-stop nature of interaction on the Web by introducing an intermediary--an Ajax
+             engine--between the user and the server. It seems like adding a layer to the application would make it less responsive, but
+             the opposite is true.
+          </p>
+          <p>Instead of loading a webpage, at the start of the session, the browser loads an Ajax engine--written in JavaScript and usually
+          tucked away in a hidden frame. This engine is responsible for both rendering the interface the user sees and communicating with the 
+          server on the user's behalf. The Ajax engine allows the user's interaction with the application to happen asynchronously--independent
+          of communications with the server. So the user is never staring at a blank browser window and an hourglass icon, waiting around for the 
+          server to do something.
+          </p>
+          
+          <figure>
+             <img src="{% static "origin/ajax2.png" %}" width=104% height=30% alt="ajax2"/>
+             <figcaption>
+                Fig. 2 : The synchronous interaction pattern of a traditional web application (top) compared with the asynchronous pattern of an Ajax application (bottom).
+             </figcaption>
+          </figure>
+          
+          <p>Every user action that normally would generate an HTTP request takes the form of a JavaScript call to the Ajax engine instead. Any response to a user action that
+             doesn't request a trip back to the server--such as simple data validation, editing data in memory, and even some navigation--the engine handles on its own. If the
+             engine needs something from the server in order to respond--if it's submitting data fro processing, loading additional interface code, or retrieving new data--the
+             engine makes those requests asynchronously, usually XML, without stalling a user's interaction with the application.
+          </p>
+          
+          <p>The biggest challenges in creating Ajax applications are not technical. The core Ajax technologies are mature, stable, and well understood. Instead, the challenges are
+             for the designers of these applications: to forget what we think we know about the limitations of the Web, and begin to imagine a wider, richer range of possibilities.
+          </p>
+
+</article>
+{% endblock %}

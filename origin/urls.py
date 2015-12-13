@@ -28,9 +28,10 @@ urlpatterns = [
     url(r'w3school/$',views.w3school,name='w3school'),
     url(r'newbase/$',views.newbase,name='newbase'),
     url(r'deployment/$',views.deployment, name='deployment'),
+    url(r'^ajax/$',views.ajax,name='ajax'),
     #url(r'newexperience/$',views.newexperience,name='newexperience'),
     #url(r'^charts/',include('CpMap.urls'),name='cpmap'),
     #url(r'^articles/comments/',include('django_comments.urls')),    
 ]
 
-urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]
+#urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]
