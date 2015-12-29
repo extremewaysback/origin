@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import PostSitemap
 import views
+
+sitemaps={'posts':PostSitemap}
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -29,6 +33,8 @@ urlpatterns = [
     url(r'newbase/$',views.newbase,name='newbase'),
     url(r'deployment/$',views.deployment, name='deployment'),
     url(r'^ajax/$',views.ajax,name='ajax'),
+    url(r'^blog/',include('blog.urls',namespace='blog',app_name='blog')),
+    url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
     #url(r'newexperience/$',views.newexperience,name='newexperience'),
     #url(r'^charts/',include('CpMap.urls'),name='cpmap'),
     #url(r'^articles/comments/',include('django_comments.urls')),    

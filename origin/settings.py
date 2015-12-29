@@ -25,41 +25,51 @@ SECRET_KEY = 'j^%32111th*jd#&h&=z__i6x+h(@2d2_c&ie^^k*7xyp#@&96$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running tests.
+#Once you are going to move your site to production and set DEBUG to False, you
+#will have to add your domain/host to this setting in order to allow it to serve the Django site.
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin',#this is an administration site
+    'django.contrib.auth',#this is an authentication framework
+    'django.contrib.contenttypes',#this is a framework for content types
+    'django.contrib.sessions',#this is a session framework
+    'django.contrib.messages',#this is a messaging framework
+    'django.contrib.staticfiles', #this is a framework for managing static files
     'contact',
     'subscription',
     'database',
     'polls',
+    'blog',
+    'taggit',
     #'disqus',
     #'bootstrap3',
     #'CpMap',
     #'threadedcomments',
     #'django_comments',
-    #'django.contrib.sites',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'haystack',
 )
-'''
-INSTALLED_APPS+=(
-      'threadedcomments',
-      'django_comments',
-      'django.contrib.sites',
-      )
-COMMENTS_APP='threadedcomments'
+
 SITE_ID=3
-'''
+
+# Define the search engine backends for haystack
+HAYSTACK_CONNECTIONS={
+    'default':{
+        'ENGINE':'haystack.backends.solr_backend.SolrEngine',
+        'URL':'http://127.0.0.1:8983/solr/blog'
+        },
+}
 
 
 #COMMENTS_APP='threadedcomments'
+
+
+#MIDDLEWARE_CLASSES is a tuple containing middlewares to be executed.
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -107,6 +117,14 @@ DATABASES = {
         'PORT':'5432',
     }
 }
+
+# Giving the email parameters for default mail
+EMAIL_HOST='smtp.126.com'
+EMAIL_HOST_USER='extremeways@126.com'
+EMAIL_HOST_PASSWORD='II68738050'
+EMAIL_PORT=25
+EMAIL_USE_TLS=True
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
