@@ -66,7 +66,7 @@ HAYSTACK_CONNECTIONS={
 }
 
 
-#COMMENTS_APP='threadedcomments'
+
 
 
 #MIDDLEWARE_CLASSES is a tuple containing middlewares to be executed.
