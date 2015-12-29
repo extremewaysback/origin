@@ -33,7 +33,7 @@ urlpatterns = [
     url(r'newbase/$',views.newbase,name='newbase'),
     url(r'deployment/$',views.deployment, name='deployment'),
     url(r'^ajax/$',views.ajax,name='ajax'),
-    url(r'^blog/',include('blog.urls',namespace='blog',app_name='blog')),
+    url(r'^blog/',include('blog.urls',namespace='blog',app_name='blog')),#add namespace for reference in template
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
     #url(r'newexperience/$',views.newexperience,name='newexperience'),
     #url(r'^charts/',include('CpMap.urls'),name='cpmap'),

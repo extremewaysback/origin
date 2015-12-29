@@ -15,7 +15,7 @@
 <nav>
    <ul>
       <li><strong><div><a href="{% url 'origin' %}">OriginT</a> <span>by Ibelin Gan</span></div></li>      
-      <li><a href="{% url 'reverse_resolution_of_urls' %}"><strong>Techniques</a></li>
+      <li><a href="{% url 'blog:post_list' %}"><strong>Blog</a></li>
       <li><a href="{% url 'contact' %}"><strong>Contact Me</a></li>
       <li><a href="{% url 'subscription' %}"><strong>Sign In</a></li>
       <li><a href="{% url 'database' %}"><strong>DMS</a></li>
@@ -33,6 +33,7 @@
 
 <section>
     {% block section %}
+    {% block content %}
     <article>
     <header>
       <h2><a href="https://www.python.org">Introduction of Django</a></h2>
@@ -108,26 +109,14 @@
      </figure>
    </article>
 
-
-    <article>
-           <p id="HCB_comment_box">is loading comments...</p>
-           <link rel="stylesheet" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
-           <script type="text/javascript" id="hcb"> 
-           if(!window.hcb_user){hcb_user={};} 
-           (function(){var s=document.createElement("script"), 
-           l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), 
-           h="//www.htmlcommentbox.com";
-           s.setAttribute("type","text/javascript");
-           s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10&ts=1442317131721");
-           if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})();
-           </script>
-    </article>
+{% endblock %}
 {% endblock %}
 </section>
 
 
 
 <aside>
+    {% block sidebar %}
 	<h2>Post Cloud</h2>
 	<ul class="tag-cloud">
 		<li><a href="{% url 'reverse_resolution_of_urls' %}" rel="tag" class="w2">reverse resolution of URLs</a></li>
@@ -152,6 +141,7 @@
 		<li><a href="" rel="tag" class="w2"></a></li>
 		<li><a href="" rel="tag" class="w7"></a></li>
 	</ul>
+	{% endblock %}
 </aside>
 
 </body>
