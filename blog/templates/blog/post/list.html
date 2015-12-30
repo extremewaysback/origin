@@ -13,13 +13,9 @@
   
   
   {% for post in posts %}
-     <h2>
-        <a href="{{ post.get_absolute_url }}">
-           {{ post.title }}
-        </a>
-        
+  
+        <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a><p>     
         <p class='tags'>
-        
            {% if post.tags.all %}Tags:{% endif %}
            
            {% for tag in post.tags.all %}
@@ -36,6 +32,8 @@
          Published {{ post.publish }} by {{ post.author }}
      </p>
      {{ post.body | markdown | truncatewords_html:30 }}
+     <p>__________________________________________________________________________________________________</p>
+          
   {% endfor %}
   
   
