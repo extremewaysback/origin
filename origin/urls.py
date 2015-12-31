@@ -28,16 +28,11 @@ urlpatterns = [
     url(r'^subscription/',include('subscription.urls')),
     url(r'^database/',include('database.urls')),
     url(r'^reverse-resolution-of-urls/$',views.reverse_resolution_of_urls, name='reverse_resolution_of_urls'),
-    url(r'test/$',views.test, name='test'),
-    url(r'w3school/$',views.w3school,name='w3school'),
     url(r'newbase/$',views.newbase,name='newbase'),
     url(r'deployment/$',views.deployment, name='deployment'),
     url(r'^ajax/$',views.ajax,name='ajax'),
     url(r'^blog/',include('blog.urls',namespace='blog',app_name='blog')),#add namespace for reference in template
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
-    #url(r'newexperience/$',views.newexperience,name='newexperience'),
-    #url(r'^charts/',include('CpMap.urls'),name='cpmap'),
-    #url(r'^articles/comments/',include('django_comments.urls')),    
 ]
 
 #urlpatterns+=[url(r'articles/comments/',include('django_comments.urls'))]
