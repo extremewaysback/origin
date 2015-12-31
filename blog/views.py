@@ -82,14 +82,14 @@ def post_list(request,tag_slug=None):
     
 def post_detail(request, year, month, day, post):
     '''dispaly a single post'''
-    post=get_object_or_404(Post,slug=post,
+    post=Post.objects.get(slug=post,
                                 status='published',
                                 publish__year=year,
                                 publish__month=month,
                                 publish__day=day)
     #We are building this QuerySet starting from the post object. We are using the manager for related objects we defined as comments using the related_name attribute
     comments=post.comments.filter(active=True)#post is an object of Post
-    if request.method=='POST':
+    if request.method=='POST':#add post in admin site
         comment_form=CommentForm(data=request.POST)
         if comment_form.is_valid():#If the form is invalid, we render the template with the validation errors.
             new_comment=comment_form.save(commit=False)#save() method creates an instance of the model that is linked to and saves it to the database.

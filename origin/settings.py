@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running test
 INSTALLED_APPS = (
     'django.contrib.admin',#this is an administration site
     'django.contrib.auth',#this is an authentication framework
-    'django.contrib.contenttypes',#this is a framework for content types
+    'django.contrib.contenttypes',#track all of the models installed in the project
     'django.contrib.sessions',#this is a session framework
     'django.contrib.messages',#this is a messaging framework
     'django.contrib.staticfiles', #this is a framework for managing static files
