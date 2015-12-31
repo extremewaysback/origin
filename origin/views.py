@@ -8,11 +8,6 @@ def origin(request):
 def reverse_resolution_of_urls(request):
     return render(request,"origin/reverse_resolution_of_urls.html")
     
-def test(request):
-    return render(request,"origin/html5.html")
-    
-def w3school(request):
-    return render(request,"origin/w3school.html")
     
 def newbase(request):
     return render(request,"origin/newbase.html")
