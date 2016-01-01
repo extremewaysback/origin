@@ -10,7 +10,7 @@ from haystack.query import SearchQuerySet
 
 import sys
 reload(sys)
-sys.setdefaultencoding('utf-8')
+sys.setdefaultencoding('ascii')
 
 # Create your views here.
 # After you have some knowledge about how to use the ORM, you are ready to build the views of the blog applcaiton
@@ -86,11 +86,11 @@ def post_list(request,tag_slug=None):
     
 def post_detail(request, year, month, day, post):
     '''dispaly a single post'''
-    post=Post.objects.get(slug=post,
+    post=Post.objects.get(slug=str(post),
                                 status='published',
-                                publish__year=year,
-                                publish__month=month,
-                                publish__day=day)
+                                publish__year=str(year),
+                                publish__month=str(month),
+                                publish__day=str(day))
     #We are building this QuerySet starting from the post object. We are using the manager for related objects we defined as comments using the related_name attribute
     comments=post.comments.filter(active=True)#post is an object of Post
     if request.method=='POST':#add post in admin site
