@@ -10,7 +10,7 @@ from haystack.query import SearchQuerySet
 
 import sys
 reload(sys)
-sys.setdefaultencoding('ascii')
+sys.setdefaultencoding('utf-8')
 
 # Create your views here.
 # After you have some knowledge about how to use the ORM, you are ready to build the views of the blog applcaiton
