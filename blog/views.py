@@ -8,6 +8,10 @@ from taggit.models import Tag
 from django.db.models import Count#This is the Count aggregation function of the Django ORM.
 from haystack.query import SearchQuerySet
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 # Create your views here.
 # After you have some knowledge about how to use the ORM, you are ready to build the views of the blog applcaiton
 # A Django view is just a Python function that receives a web request and returns a web response
