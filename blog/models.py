@@ -7,9 +7,7 @@ from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 # Use the reverse() method that allows you to build URLs by their name and passing optional parameters.
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+
 #add customised manager 
 
 class PublishedManager(models.Manager):
