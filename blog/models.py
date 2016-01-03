@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from taggit.managers import TaggableManager
-from django.contrib.auth.models import User
+
 # Use the reverse() method that allows you to build URLs by their name and passing optional parameters.
 
 
