@@ -117,30 +117,15 @@
 
 <aside>
     {% block sidebar %}
-	<h2>Post Cloud</h2>
-	<ul class="tag-cloud">
-		<li><a href="{% url 'reverse_resolution_of_urls' %}" rel="tag" class="w2">reverse resolution of URLs</a></li>
-		<li><a href="{% url 'deployment' %}" rel="tag" class="w8">Deployment with git</a></li>
-		<li><a href="" rel="tag" class="w3"></a></li>
-		<li><a href="{% url 'ajax' %}" rel="tag" class="w3">ajax</a></li>
-		<li><a href="" rel="tag" class="w8"></a></li>
-		<li><a href=" rel="tag" class="w3"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w6"></a></li>
-		<li><a href="" rel="tag" class="w9"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w5"></a></li>
-		<li><a href="" rel="tag" class="w1"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w4"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w10"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w8"></a></li>
-		<li><a href="" rel="tag" class="w3"></a></li>
-		<li><a href="" rel="tag" class="w2"></a></li>
-		<li><a href="" rel="tag" class="w7"></a></li>
-	</ul>
+	<h2>Tag Cloud</h2>
+	     <ul class="tag-cloud">
+	    {% for tag in tags %}
+	        <li><p><a href="{% url 'blog:post_list_by_tag' tag.slug %}" rel="tag" class="w2">
+                 {{ tag.name }}
+            </a></p></li>
+        {% endfor %}
+        </ul>
+
 	{% endblock %}
 </aside>
 

@@ -20,7 +20,7 @@ sys.setdefaultencoding('utf-8')
 def post_share(request, post_id):
     '''handle the forms submitted by users and send an email when it's successfully submitted'''
     post=get_object_or_404(Post, id=post_id, status='published')
-    sent=False #A flag passed to template for setting the logic to display different content
+    sent=False #A flag passed to template for setting the logic to display different content in template
     
     if request.method=='POST':
         #Form was submitted
@@ -65,7 +65,7 @@ def post_list(request,tag_slug=None):
     
     #If there is a tag_slug through URL, will present the posts containing the given tag.
     #Show the posts paginated
-    tag=None
+    #tag=None
     if tag_slug:
         tag=get_object_or_404(Tag,slug=tag_slug)#Get the tag specified by tag_slug
         tag_list_all=tag.name

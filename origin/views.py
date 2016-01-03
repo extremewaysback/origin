@@ -1,8 +1,12 @@
+#origin/views.py
 from django.shortcuts import render
+from taggit.models import Tag
+from blog.models import Post
 
 
 def origin(request):
-    return render(request,"origin/newbase.html")
+    all_tag=Tag.objects.all()
+    return render(request,"origin/newbase.html",{"tags":all_tag})
     
     
 def reverse_resolution_of_urls(request):
