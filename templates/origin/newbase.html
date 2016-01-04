@@ -1,3 +1,4 @@
+{% load blog_tags %}
 <!DOCTYPE html>
 <html> 
 <head>
@@ -118,8 +119,9 @@
 <aside>
     {% block sidebar %}
 	<h2>Tag Cloud</h2>
+		{% get_all_tags as all_tags %}
 	     <ul class="tag-cloud">
-	    {% for tag in tags %}
+	    {% for tag in all_tags %}
 	        <li><p><a href="{% url 'blog:post_list_by_tag' tag.slug %}" rel="tag" class="w2">
                  {{ tag.name }}
             </a></p></li>

@@ -100,12 +100,12 @@ aside {
       aside h2 {
 		       color: #888;
 		       font-size: 1.8em;
-		       text-align:center;
+		       text-align:left;
 		       }
 			aside .tag-cloud {
-				padding: 15px 35px 10px 0;
+				padding: 15px 20px 10px 0;
 				text-align: left;
-			}
+			    }
 				aside .tag-cloud li {
 					display: inline
 				}

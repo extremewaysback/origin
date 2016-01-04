@@ -8,6 +8,7 @@ from django import template
 register=template.Library()
 
 from ..models import Post
+from taggit.models import Tag
 
 #process data and return the string and register it
 #you can do it by specifying a name attribute like register.simple_tag(name='my_tag')
@@ -15,7 +16,11 @@ from ..models import Post
 def total_posts():
     '''Retrieve all the posts published return a string'''
     return Post.objects.filter(status='published').count()
-    
+
+@register.assignment_tag
+def get_all_tags():
+    '''Retrieve all the tags and return a list'''
+    return Tag.objects.all()   
 
 #The template tag we just created can be used passing the optional number of comments to display like {% show_latest_posts 3 %}
 @register.inclusion_tag('blog/post/latest_posts.html')
