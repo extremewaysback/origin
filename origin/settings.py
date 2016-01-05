@@ -64,7 +64,7 @@ HAYSTACK_CONNECTIONS={
 
 
 #setting for dashboard login
-from django.core.urlresovers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL=reverse_lazy('dashboard')
 LOGIN_URL=reverse_lazy('login')
 LOGOUT_URL=reverse_lazy('logout')
