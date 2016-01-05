@@ -39,17 +39,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',#this is a session framework
     'django.contrib.messages',#this is a messaging framework
     'django.contrib.staticfiles', #this is a framework for managing static files
+    'account',
     'contact',
     'subscription',
     'database',
     'polls',
     'blog',
     'taggit',
-    #'disqus',
-    #'bootstrap3',
-    #'CpMap',
-    #'threadedcomments',
-    #'django_comments',
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'haystack',
@@ -66,6 +62,12 @@ HAYSTACK_CONNECTIONS={
 }
 
 
+
+#setting for dashboard login
+from django.core.urlresovers import reverse_lazy
+LOGIN_REDIRECT_URL=reverse_lazy('dashboard')
+LOGIN_URL=reverse_lazy('login')
+LOGOUT_URL=reverse_lazy('logout')
 
 
 
