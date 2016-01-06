@@ -33,13 +33,13 @@ ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running test
 # Application definition
 
 INSTALLED_APPS = (
+    'account',
     'django.contrib.admin',#this is an administration site
     'django.contrib.auth',#this is an authentication framework
     'django.contrib.contenttypes',#track all of the models installed in the project
     'django.contrib.sessions',#this is a session framework
     'django.contrib.messages',#this is a messaging framework
     'django.contrib.staticfiles', #this is a framework for managing static files
-    'account',
     'contact',
     'subscription',
     'database',
@@ -65,9 +65,9 @@ HAYSTACK_CONNECTIONS={
 
 #setting for dashboard login
 from django.core.urlresolvers import reverse_lazy
-LOGIN_REDIRECT_URL=reverse_lazy('dashboard')
-LOGIN_URL=reverse_lazy('login')
-LOGOUT_URL=reverse_lazy('logout')
+LOGIN_REDIRECT_URL=reverse_lazy('dashboard')#tells django which url to redirect after login, if the contrib.auth.views.login view gets no next parameter
+LOGIN_URL=reverse_lazy('login')#is the url to redirect the user to log in
+LOGOUT_URL=reverse_lazy('logout')#is the url to redirect the user to log out
 
 
 
@@ -119,6 +119,16 @@ DATABASES = {
         'PORT':'5432',
     }
 }
+
+
+#Add an SMTP configuration, so that django is able to send e-mails.
+#Can configure Django to write e-mails to the standard output instead of sending them through an SMTP server.
+#Django provides an e-mail backend to write e-mails to the console.
+#The EMAIL_BACKEND setting indicates the class to use to send e-mails
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+
+
 
 # Giving the email parameters for default mail
 EMAIL_HOST='smtp.126.com'
