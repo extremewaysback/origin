@@ -125,17 +125,21 @@ DATABASES = {
 #Can configure Django to write e-mails to the standard output instead of sending them through an SMTP server.
 #Django provides an e-mail backend to write e-mails to the console.
 #The EMAIL_BACKEND setting indicates the class to use to send e-mails
-EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+#During developing
+#EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
 
 
 # Giving the email parameters for default mail
 EMAIL_HOST='smtp.126.com'
+EMAIL_PORT=25
 EMAIL_HOST_USER='extremeways@126.com'
 EMAIL_HOST_PASSWORD='II68738050'
-EMAIL_PORT=25
 EMAIL_USE_TLS=True
+DEFAULT_FROM_EMAIL='extremeways@126.com'
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+
 
 
 # Internationalization
