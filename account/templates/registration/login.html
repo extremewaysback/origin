@@ -13,7 +13,7 @@
     {% if request.user.is_authenticated %}
        You have already logged in!
     {% else %}
-       <p>Please, use the following form to log-in:</p>
+       <p>Please, use the following form to log-in.If you don't have an account <a href="{% url 'register' %}">register here</a></p>
        <form action="{% url 'login' %}" method="POST">
            {{ form.as_p }}
            {% csrf_token %}

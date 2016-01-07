@@ -1,4 +1,6 @@
+{% extends "origin/newbase.html" %}
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +9,9 @@
 </head>
 
 <body>
-
+    <span class="logo">{% block theme %}Account Management System{% endblock %}</span>     
+    {% block sidebar %}
     <div id="header">
-      <span class="logo">Account</span>
       {% if request.user.is_authenticated %}
          <ul class="menu">
             <li {% if section == "dashboard" %}class="selected"{% endif %}>
@@ -25,6 +27,7 @@
             </li>
         </ul>
       {% endif %}  
+
       
       <span class="user">
          {% if request.user.is_authenticated %}
@@ -35,7 +38,7 @@
          {% endif %}
       </span>
     </div>
-    
+    {% endblock %}
     
     <div id="content">
        {% block content %}
