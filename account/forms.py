@@ -1,7 +1,7 @@
 #account/forms.py
-
 from django import forms
 from django.contrib.auth.models import User
+from .models import Profile
 
 
 class LoginForm(forms.Form):
@@ -24,3 +24,15 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password']!=cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
+        
+class UserEditForm(forms.ModelForm):
+    '''allow users to edit the first, last name and email which are stored in the built-in User model'''
+    class Meta:
+        model=User
+        fields=('first_name','last_name','email')
+        
+class ProfileEditForm(forms.ModelForm):
+    '''allow users to edit the extra data we save in the custom Profile model. Users will be able to edit their date of birth and upload a picture'''
+    class Meta:
+        model=Profile
+        fields=('date_of_birth','photo')

@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
 ]
 
-
+#The static() helper functions is suitable for development but not for production use.
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
