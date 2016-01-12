@@ -71,8 +71,8 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save(commit=False)
-            profile.instance.user = user_form.instance
-            profile.instance.save()
+            profile_form.instance.user = user_form.instance
+            profile_form.instance.save()
     else:
         user_form=UserEditForm(instance=request.user)
         profile_form=ProfileEditForm(instance=request.user.profile)
