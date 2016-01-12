@@ -7,7 +7,6 @@ from .forms import LoginForm, UserRegistrationForm, UserEditForm, ProfileEditFor
 from .models import Profile
 
 
-
 def user_login(request):
     if request.method=='POST':#if a POST method
         form=LoginForm(request.POST)#Instantiate the form with the submitted data with form=LoginForm(request.POST)
@@ -61,6 +60,7 @@ def register(request):
         
 @login_required #login_required decorator because users have to be authenticated to edit their profile
 def edit(request):
+    flag=False
     if request.method=='POST':
         user_form=UserEditForm(instance=request.user,data=request.POST)
         try:
@@ -70,7 +70,11 @@ def edit(request):
         profile_form=ProfileEditForm(instance=instance,data=request.POST,files=request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
-            profile_form.save()
+            #profile_form.save()
+            profile_form.save(commit=False)
+            profile_form.instance.user=user_form.instance
+            profile_form.instance.save()
+            flag=True
     else:
         user_form=UserEditForm(instance=request.user)
         try:
@@ -79,4 +83,4 @@ def edit(request):
             instance=None
         profile_form=ProfileEditForm(instance=instance)
         
-    return render(request,'account/edit.html',{'user_form':user_form,'profile_form':profile_form})
+    return render(request,'account/edit.html',{'user_form':user_form,'profile_form':profile_form,'flag':flag})

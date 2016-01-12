@@ -1,5 +1,5 @@
 html,body{
-          height:130%
+          height:100%
           }
 
 body
@@ -7,7 +7,6 @@ body
   margin:0px;
   padding:0px;
   font: .9125em/1.5 Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
-  background: #fff;
   color: #333;
   }
 
@@ -19,6 +18,10 @@ aside,
 footer {
 		display: block;
 	   }
+
+a:hover{
+        color:#722;
+        }
 
 nav {
     position:fixed;
@@ -61,23 +64,29 @@ header {
        background-color:rgba(86,73,140,0.5);
        color:black; 
        }
-section header{
-       margin:0;
-       padding:0;
-       background-color:white;
-       }    
+ 
        
 section {
+        float: left;
 		width: 71%;
-		float: left;
+		position: relative;
 		padding: 0px 25px;
 		}
 		
-section a {
-           text-decoration:none;
-           color:#69a;
-           }
-		      
+        section a {
+              text-decoration:none;
+              color:#69a;
+              }
+        section article {
+              margin-bottom:50px;
+              }
+		section header{
+              margin:0;
+              padding:0;
+              background-color:white;
+              }   
+
+
 figure {
        margin-left:0;
        }
@@ -86,15 +95,12 @@ figcaption {
            text-align:center;
            }
 
-article {
-         margin-bottom:50px;
-         }
-
 
 aside {
        float:right;
        margin-top:0;
        padding: 1px 0 30px;
+       position: relative;
 	   width: 25%;
       }
       aside h2 {

@@ -16,8 +16,9 @@
        <p>Please, use the following form to log-in.If you don't have an account <a href="{% url 'register' %}">register here</a></p>
        <form action="{% url 'login' %}" method="POST">
            {{ form.as_p }}
-           {% csrf_token %}
+
            <input type="hidden" name="next" value="{{ next }}" />
+           {% csrf_token %}
            <p><input type="submit" value="Log-in"></p>
        </form>
        
