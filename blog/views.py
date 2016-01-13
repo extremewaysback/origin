@@ -87,11 +87,7 @@ def post_list(request,tag_slug=None):
     
 def post_detail(request, year, month, day, post):
     '''dispaly a single post'''
-    post=Post.objects.get(slug=post,
-                                status='published',
-                                publish__year=year,
-                                publish__month=month,
-                                publish__day=day)
+    post=Post.objects.get(slug=post,status='published',publish__year=year,publish__month=month,publish__day=day)
     #We are building this QuerySet starting from the post object. We are using the manager for related objects we defined as comments using the related_name attribute
     comments=post.comments.filter(active=True)#post is an object of Post
     if request.method=='POST':#add post in admin site
