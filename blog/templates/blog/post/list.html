@@ -1,6 +1,15 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
 
+
+{% block style %}
+#bloglist { border-bottom-style:solid;
+            border-top-style:solid;
+            border-width:1px;
+            border-color:#f35;}
+{% endblock %}
+
+
 {% block title %}My Blog{% endblock %}
 
 {% block content %}
@@ -13,7 +22,7 @@
   
   
   {% for post in posts %}
-  
+    <div id="bloglist">
         <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a><p>     
         <p class='tags'>
            <h5>{% if post.tags.all %}Tags:{% endif %}
@@ -32,8 +41,7 @@
          Published {{ post.publish }} by {{ post.author }}
      </p>
      {{ post.body | markdown | truncatewords_html:30 }}
-     <p>_______________________________________________________________________________________________</p>
-          
+    </div>   
   {% endfor %}
   
   
