@@ -68,11 +68,12 @@ def edit(request):
         except:
             instance=None
         profile_form=ProfileEditForm(instance=instance,data=request.POST,files=request.FILES)
+        
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             #profile_form.save()
             profile_form.save(commit=False)
-            profile_form.instance.user=user_form.instance
+            profile_form.instance.user=user_form.instance#update the attribute of Profile object which is required before committing
             profile_form.instance.save()
             flag=True
     else:
