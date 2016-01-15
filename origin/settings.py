@@ -54,14 +54,22 @@ INSTALLED_APPS = (
 SITE_ID=3
 
 # Define the search engine backends for haystack
+'''
 HAYSTACK_CONNECTIONS={
     'default':{
         'ENGINE':'haystack.backends.solr_backend.SolrEngine',
         'URL':'http://127.0.0.1:8983/solr/blog'
         },
 }
+'''
 
-
+#The simple backend using very basic matching via the database itself. It's not recommended for production use but it will return results
+HAYSTACK_CONNECTIONS={
+                    'default':{
+                               'ENGINE':'haystack.backends.simple_backend.SimpleEngine',
+                              },
+                     }
+                   
 
 #setting for dashboard login
 from django.core.urlresolvers import reverse_lazy

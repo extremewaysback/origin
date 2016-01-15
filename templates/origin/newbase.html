@@ -15,7 +15,8 @@
 <body><!--The following is the body of the html-->
 <nav>
    <ul>
-      <li><strong><div><a href="{% url 'origin' %}">OriginT</a> <span>by Ibelin Gan</span></div></li>      
+      <li><strong><div><a href="{% url 'origin' %}">OriginT</a> <span>by Ibelin Gan</span></div></li> 
+      <li><a href="{% url 'blog:post_search' %}"><strong>Search</a></li>     
       <li><a href="{% url 'blog:post_list' %}"><strong>Blog</a></li>
       <li><a href="{% url 'login' %}"><strong>Log In</a></li>
       <li><a href="{% url 'contact' %}"><strong>Contact Me</a></li>
