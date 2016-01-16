@@ -96,12 +96,15 @@ figcaption {
 
 
 aside {
+       height:100%
        float:right;
        margin-top:0;
-       padding: 1px 0 30px;
+       padding: 0px 0 30px;
        position: relative;
 	   width: 25%;
-	   background-color: #f23;
+	   border-left-style:dotted;
+	   border-width:1px;
+	   border-color:#2f3;
       }
       aside h2 {
 		       color: #888;
