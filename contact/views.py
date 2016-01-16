@@ -49,7 +49,7 @@ def contact(request):
             return HttpResponseRedirect('/contact/thanks/')
     else:
         form = ContactItemForm(
-            initial={'subject': 'I love your site!'}
+            initial={'subject': 'Input a subject','email':'Input a valid email'}
         )
     return render(request, 'contact/contact_form.html', {'form': form})   
     
