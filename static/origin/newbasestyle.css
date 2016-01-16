@@ -101,6 +101,7 @@ aside {
        padding: 1px 0 30px;
        position: relative;
 	   width: 25%;
+	   background-color: #f23;
       }
       aside h2 {
 		       color: #888;
