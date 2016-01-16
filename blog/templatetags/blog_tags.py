@@ -52,4 +52,4 @@ def markdown_format(text):
 
 @register.filter(name="markdown2")
 def markdown2_format(text):
-    return mark_safe(markdown.markdown(text))
+    return mark_safe(markdown2.markdown(text))
