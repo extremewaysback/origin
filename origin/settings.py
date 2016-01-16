@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'haystack',
+    'haystack',#search enginer
 )
 
 SITE_ID=3
