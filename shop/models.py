@@ -18,10 +18,10 @@ class Category(models.Model):
 class Product(models.Model):
     category=models.ForeignKey(Category,related_name='products')
     name=models.CharField(max_length=200,db_index=True)
-    slug=models.SlugField(max_length=200,db_indexx=True)
+    slug=models.SlugField(max_length=200,db_index=True)
     image=models.ImageField(upload_to='products/%Y/%m/%d',blank=True) #........
     description=models.TextField(blank=True)
-    price=models.DecimalField(max_length=10,decimal_places=2)
+    price=models.DecimalField(max_length=10,decimal_places=2,max_digits=2)
     stock=models.PositiveIntegerField()
     available=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
