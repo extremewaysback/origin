@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'shop',
 )
 
+
 SITE_ID=3
 
 # Define the search engine backends for haystack
