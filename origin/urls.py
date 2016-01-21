@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^ajax/$',views.ajax,name='ajax'),
     url(r'^blog/',include('blog.urls',namespace='blog')),#add namespace for reference in template
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
+    url(r'shop/',include('shop.urls',namespace='shop')),
 ]
 
 #The static() helper functions is suitable for development but not for production use.

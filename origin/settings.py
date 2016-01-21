@@ -178,5 +178,5 @@ STATIC_ROOT='staticfiles'
 
 #serve media files uploaded by users with the development server
 
-MEDIA_URL='/media/'#teh base URL to serve the media files uploaded by users
+MEDIA_URL='/media/'#the base URL to serve the media files uploaded by users
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')#build the path dynamically relative to our project path to make our code more generic
