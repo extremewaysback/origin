@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^ajax/$',views.ajax,name='ajax'),
     url(r'^blog/',include('blog.urls',namespace='blog')),#add namespace for reference in template
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
+    url(r'^cart/',include('cart.urls',namespace='cart')),#more restrictive than the latter
     url(r'shop/',include('shop.urls',namespace='shop')),
 ]
 

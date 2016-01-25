@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',#this is an administration site
     'django.contrib.auth',#this is an authentication framework
     'django.contrib.contenttypes',#track all of the models installed in the project
-    'django.contrib.sessions',#this is a session framework
+    'django.contrib.sessions',#this is a session framework, database-backed sessions
     'django.contrib.messages',#this is a messaging framework
     'django.contrib.staticfiles', #this is a framework for managing static files
     'contact',
@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'haystack',#search enginer
     'shop',
+    'cart',
 )
 
 
@@ -84,7 +85,7 @@ LOGOUT_URL=reverse_lazy('logout')#is the url to redirect the user to log out
 #MIDDLEWARE_CLASSES is a tuple containing middlewares to be executed.
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', #every request get a session attribute like a dictionary
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,6 +94,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+#This is the key that we are going to use to store the cart in the user session
+#Since Django sessions are per-visitor, we can use the same cart session key for all sessions
+CART_SESSION_ID='cart'
 
 ROOT_URLCONF = 'origin.urls'
 
@@ -107,6 +112,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.cart',
             ],
         },
     },

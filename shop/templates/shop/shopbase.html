@@ -12,7 +12,24 @@ Your cart is empty.
     
     
 {% block sidebar %}
-Your cart is empty
+
+{% block cart %}
+<div class="cart">
+  {% with total_items=cart|length %}
+    {% if total_items > 0 %}
+      Your cart:
+      <a href="{% url 'cart:cart_detail' %}">
+        {{ total_items }}&nbsp item{{ total_items|pluralize}}
+        &nbsp&nbspAND total cost:${{ cart.get_total_price }}
+      </a>
+    {% else %}
+      Your cart is empty.
+    {% endif %}
+  {% endwith %}
+</div>
+{% endblock %}
+
 {% block insidebar %}
 {% endblock %}
+
 {% endblock %}
