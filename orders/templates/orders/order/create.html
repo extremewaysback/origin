@@ -1,0 +1,35 @@
+{% extends "shop/shopbase.html" %}
+
+{% load static %}
+
+{% block title %}
+Checkout
+{% endblock %}
+
+{% block content %}
+  <h1>Checkout</h1>
+  
+  <div class="order-info">
+      <h3>Your order</h3>
+      <ul>
+        {% for item in cart %}
+          <li>
+            {{ item.quantity }}&nbsp X &nbsp {{ item.product.name }}&nbsp= &nbsp
+            <span>${{ item.total_price }}</span>
+          </li>
+        {% endfor %}
+     </ul>
+     <p>Total: ${{ cart.get_total_price }}</p>
+  </div>
+
+  
+  <form action="." method="post" class="order-form">
+      <table>
+        {{ form.as_table }}
+      </table>
+      {% csrf_token %}
+      <p><input type="submit" value="Place order"></p>
+  </form>
+          
+{% endblock %} 
+  

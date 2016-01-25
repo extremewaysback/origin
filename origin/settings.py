@@ -41,9 +41,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',#this is a messaging framework
     'django.contrib.staticfiles', #this is a framework for managing static files
     'contact',
-    'subscription',
+    #'subscription',
     'database',
-    'polls',
+    #'polls',
     'blog',
     'taggit',
     'django.contrib.sites',
@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'haystack',#search enginer
     'shop',
     'cart',
+    'orders',
 )
 
 

@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
     url(r'^cart/',include('cart.urls',namespace='cart')),#more restrictive than the latter
     url(r'shop/',include('shop.urls',namespace='shop')),
+    url(r'orders/',include('orders.urls',namespace='orders')),
 ]
 
 #The static() helper functions is suitable for development but not for production use.

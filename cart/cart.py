@@ -11,7 +11,7 @@ class Cart(object):
         self.session=request.session #store the current session to make it accessible to the other methods of the Cart class
         
         #return the cart dictionary or None
-        cart=self.session.get(settings.CART_SESSION_ID)#get the cart value from current session dictionary
+        cart=self.session.get(settings.CART_SESSION_ID) #get the cart value from current session dictionary
         if not cart:
            cart=self.session[settings.CART_SESSION_ID]={}
         self.cart=cart #A dictionary with product_id as key
