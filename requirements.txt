@@ -9,5 +9,9 @@ markdown2==2.3.0
 django-haystack==2.4.1
 pysolr==3.3.3
 pillow==3.1.0
+celery==3.1.20
+tornado==4.2.0
+babel==2.2.0
+django-paypal==0.2.7
 
 
