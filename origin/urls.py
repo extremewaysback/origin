@@ -39,6 +39,7 @@ urlpatterns = [
     url(r'^cart/',include('cart.urls',namespace='cart')),#more restrictive than the latter
     url(r'shop/',include('shop.urls',namespace='shop')),
     url(r'orders/',include('orders.urls',namespace='orders')),
+    url(r'^paypal/',include('paypal.standard.ipn.urls')),
 ]
 
 #The static() helper functions is suitable for development but not for production use.

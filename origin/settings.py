@@ -52,10 +52,19 @@ INSTALLED_APPS = (
     'shop',
     'cart',
     'orders',
+    'paypal.standard.ipn', #paypal app integrate PayPal payments standard with Instance Payment Notification (IPN)
 )
 
 
+
+
 SITE_ID=3
+
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL='extremewaysback@hotmail.com' 
+PAYPAL_TEST=True
+
 
 # Define the search engine backends for haystack
 '''
