@@ -28,18 +28,19 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.origin, name='origin'),  #show the origin homepage of the website
     url(r'^contact/',include('contact.urls')),
-    url(r'^subscription/',include('subscription.urls')),
+    #url(r'^subscription/',include('subscription.urls')),
     url(r'^database/',include('database.urls')),
-    url(r'^reverse-resolution-of-urls/$',views.reverse_resolution_of_urls, name='reverse_resolution_of_urls'),
-    url(r'newbase/$',views.newbase,name='newbase'),
-    url(r'deployment/$',views.deployment, name='deployment'),
-    url(r'^ajax/$',views.ajax,name='ajax'),
+    #url(r'^reverse-resolution-of-urls/$',views.reverse_resolution_of_urls, name='reverse_resolution_of_urls'),
+    #url(r'newbase/$',views.newbase,name='newbase'),
+    #url(r'deployment/$',views.deployment, name='deployment'),
+    #url(r'^ajax/$',views.ajax,name='ajax'),
     url(r'^blog/',include('blog.urls',namespace='blog')),#add namespace for reference in template
     url(r'^sitemap\.xml$',sitemap,{'sitemaps':sitemaps},name='django.contrib.sitemaps.views,sitemap'),
     url(r'^cart/',include('cart.urls',namespace='cart')),#more restrictive than the latter
     url(r'shop/',include('shop.urls',namespace='shop')),
     url(r'orders/',include('orders.urls',namespace='orders')),
     url(r'^paypal/',include('paypal.standard.ipn.urls')),
+    url(r'^payment/',include('payment.urls',namespace='payment')),
 ]
 
 #The static() helper functions is suitable for development but not for production use.

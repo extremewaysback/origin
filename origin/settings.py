@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'cart',
     'orders',
     'paypal.standard.ipn', #paypal app integrate PayPal payments standard with Instance Payment Notification (IPN)
+    'payment',
 )
 
 
