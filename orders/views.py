@@ -7,7 +7,28 @@ from cart.cart import Cart
 from .tasks import order_created
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from django.contrib.admin.views.decorators import staff_member_required
+from django.shortcuts import get_object_or_404
+from .models import Order
+from django.conf import settings
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+"""
+import weasyprint
+from io import BytesIO
 
+
+@staff_member_required  #only staff member can access this view
+def admin_order_pdf(request,order_id):
+    order=get_object_or_404(Order,id=order_id)
+    html=render_to_string('orders/order/pdf.html',{'order':order}) #render the template and save in html
+    response=HttpResponse(content_type='application/pdf')
+    response['Content-Disposition']='filename="order_{}.pdf"'.format(order.id) #specify the file name
+    weasyprint.HTML(string=html).write_pdf(response,stylesheets=[weasyprint.css(settings.STATIC_ROOT+'css/pdf.css')])
+    return response
+    
+"""
+    
 
 def order_create(request):
     cart=Cart(request)  #get the cart information as a dictionary
@@ -34,4 +55,10 @@ def order_create(request):
     return render(request, 'orders/order/create.html',{'cart':cart,'form':form})
                 
 
-
+#Create a custom view to display informaiton about an order
+@staff_member_required
+def admin_order_detail(request, order_id):
+    order=get_object_or_404(Order, id=order_id)
+    return render(request,'admin/orders/order/detail.html',{'order':order})
+    
+   

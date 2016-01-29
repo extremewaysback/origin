@@ -192,6 +192,7 @@ STATICFILES_DIRS=(
                   )
 STATICFILES_STORAGE='whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT='staticfiles'
+#STATIC_ROOT=os.path.join(BASE_DIR,'static/')
 
 #serve media files uploaded by users with the development server
 

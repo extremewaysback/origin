@@ -1,8 +1,17 @@
+#orders/admin.py
 from django.contrib import admin
 from .models import Order, OrderItem
 import csv
 import datetime
 from django.http import HttpResponse
+from django.core.urlresolvers import reverse
+"""
+def order_detail(obj):
+    '''take an Order object as argument and returns an HTML link'''
+    return '<a href="{}">View</a>'.format(reverse('orders:admin_order_detail',args=[obj.id]))
+#To avoid HTML-escaping in any Model method, ModelAdmiin or any other callable
+order_detail.allow_tags=True
+"""
 
 def export_to_csv(modeladmin,request,queryset):
     opts=modeladmin.model._meta
@@ -35,6 +44,6 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
     actions=[export_to_csv]
-    
+
 admin.site.register(Order,OrderAdmin)
     

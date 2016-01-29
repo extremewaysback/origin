@@ -71,7 +71,7 @@ def post_list(request,tag_slug=None):
         tag=get_object_or_404(Tag,slug=tag_slug)#Get the tag specified by tag_slug
         tag_list_all=tag.name
         object_list=object_list.filter(tags__in=[tag])#many to many relationship
-    paginator=Paginator(object_list,3) #3 posts in each page
+    paginator=Paginator(object_list,5) #5 posts in each page
     page=request.GET.get('page')  #get the current page
     try:
         posts=paginator.page(page)
