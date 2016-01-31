@@ -3,6 +3,7 @@ from django.db import models
 from shop.models import Product
 
 class Order(models.Model):
+    '''the detail of customer information'''
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
     email=models.EmailField()
@@ -21,9 +22,9 @@ class Order(models.Model):
         
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
-        
-        
+                
 class OrderItem(models.Model):
+    '''contain information of product item'''
     order=models.ForeignKey(Order, related_name='items')
     product=models.ForeignKey(Product, related_name='order_items')
     price=models.DecimalField(max_digits=10,decimal_places=2)
@@ -33,4 +34,5 @@ class OrderItem(models.Model):
         return '{}'.format(self.id)
         
     def get_cost(self):
+        '''return the total price of every item'''
         return self.price*self.quantity

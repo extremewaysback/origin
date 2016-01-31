@@ -52,15 +52,12 @@ INSTALLED_APPS = (
     'shop',
     'cart',
     'orders',
-    'paypal.standard.ipn', #paypal app integrate PayPal payments standard with Instance Payment Notification (IPN)
+    'paypal.standard.ipn', #django-paypal to integrate PayPal payments standard with Instance Payment Notification (IPN) for handling payment notifications
     'payment',
 )
 
 
-
-
 SITE_ID=3
-
 
 # django-paypal settings
 PAYPAL_RECEIVER_EMAIL='extremewaysback@hotmail.com' 
