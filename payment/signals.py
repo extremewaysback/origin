@@ -1,11 +1,11 @@
 #payment/signals.py
-
 from django.shortcuts import get_object_or_404
 from paypal.standard.models import ST_PP_COMPLETED
 from paypal.standard.ipn.signals import valid_ipn_received
 from orders.models import Order
 
 def payment_notification(sender, **kwargs):
+    '''custom receiver function and connect to the valid_ipn_received signal to confirm payments'''
     ipn_obj=sender #an instance of PayPalIPN model 
     if ipn_obj.payment_status==ST_PP_COMPLETED:
         #payment was successful
