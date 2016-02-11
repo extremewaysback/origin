@@ -3,12 +3,12 @@
 # Before using custom tempalte tags, you have to make them available for the template using the {% load %} tag.
 
 from django import template
+from ..models import Post
+from taggit.models import Tag
+
 #Each template tags module needs to contain a variable called register to be a valid tag library.
 #This variable is an instance of template.Library and it's used to register your own template tags and filters.
 register=template.Library()
-
-from ..models import Post
-from taggit.models import Tag
 
 #process data and return the string and register it
 #you can do it by specifying a name attribute like register.simple_tag(name='my_tag')
@@ -53,3 +53,4 @@ def markdown_format(text):
 @register.filter(name="markdown2")
 def markdown2_format(text):
     return mark_safe(markdown2.markdown(text))
+    

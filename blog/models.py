@@ -46,16 +46,16 @@ class Post(models.Model):
                                                 self.slug])
 
 class Comment(models.Model):
-    #ForeignKey to associate the comment with a single post. This many-to-one relationship is defined in the Comment model
-    #The relate_name attribute allows us to name the attribute that we use for the relation from the related object back to this one.
-    #If you don't define teh related_name attribute, django will use the undercase name of the model followed by _set to name the manager of the related object back to this one.
+    # ForeignKey to associate the comment with a single post. This many-to-one relationship is defined in the Comment model
+    # The relate_name attribute allows us to name the attribute that we use for the relation from the related object back to this one.
+    # If you don't define teh related_name attribute, django will use the undercase name of the model followed by _set to name the manager of the related object back to this one.
     post=models.ForeignKey(Post, related_name='comments')
     name=models.CharField(max_length=80)
     email=models.EmailField()
     body=models.TextField()
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
-    #active boolen field that we will use to manually deactivate inappropriate comments. 
+    # Active boolen field that we will use to manually deactivate inappropriate comments. 
     active=models.BooleanField(default=True)
     
     class Meta:
@@ -64,4 +64,15 @@ class Comment(models.Model):
     def __str__(self):
         return 'Comment by {} on {}'.format(self.name, self.post)
 
+class AboutThisSite(models.Model):
+    '''Class for introducing this site'''
+     
+    title=models.CharField(max_length=250)
+    slug=models.SlugField(max_length=250)
+    body=models.TextField()
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
     
+    def get_absolute_url(self):
+        return reverse('blog:about_site', args=[self.slug])
+  

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, AboutThisSite
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from .forms import EmailPostForm, CommentForm, SearchForm
@@ -62,7 +62,6 @@ def post_list(request,tag_slug=None):
         tags=tags|s  #union of set
     tags=[t.name for t in list(tags)]
     tag_list_all=', '.join(tags)
-    
     
     #If there is a tag_slug through URL, will present the posts containing the given tag.
     #Show the posts paginated
@@ -130,3 +129,10 @@ def post_search(request):
             total_results=r.count()
             
     return render(request,'blog/post/search.html',{'form':form,'cd':cd,'results':results,'total_results':total_results})
+
+
+def about_site(request, slug=None):
+    '''Introduction about this site'''
+    aso=get_object_or_404(AboutThisSite, slug=slug)
+    return render(request,'blog/post/about-site.html',{'aso':aso})
+    
