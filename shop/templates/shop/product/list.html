@@ -10,17 +10,29 @@
 {% block content %}
 
 <div id="main" class "product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-    
+ <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+ <table class='cart' border='1'>
+  <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product</th>
+        <th>Unit price</th>
+     </tr>
+  </thead>
+  <tbody>
     {% for product in products %}
+      <tr>
         <div class="item">
-            <a href="{{ product.get_absolute_url }}">
+            <td><a href="{{ product.get_absolute_url }}">
                <img src="{% if product.image %} {{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" style="with:100px; height:100px">
-            </a>
-            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                ${{ product.price }}
+            </a></td>
+            <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
+            <td>${{ product.price }}</td>
         </div>
+      </tr>
     {% endfor %}
+  </tbody>
+ </table>
 </div>
 
 {% endblock %}
