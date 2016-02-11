@@ -9,6 +9,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import djcelery
+
+djcelery.setup_loader()
+#Celery settings
+BROKER_URL='redis://h:p3ilg0snp5int2aidfaqtqmr84q@ec2-54-83-39-131.compute-1.amazonaws.com:25629'
+CELERY_RESULT_BACKEND='redis://h:p3ilg0snp5int2aidfaqtqmr84q@ec2-54-83-39-131.compute-1.amazonaws.com:25629'
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -51,6 +58,7 @@ INSTALLED_APPS = (
     'orders',
     'paypal.standard.ipn', #django-paypal to integrate PayPal payments standard with Instance Payment Notification (IPN) for handling payment notifications
     'payment',
+    'djcelery',
 )
 
 SITE_ID=3

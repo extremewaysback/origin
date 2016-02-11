@@ -1,4 +1,4 @@
-#orders/tasks.py
+# orders/tasks.py for celery to launch asynchronous tasks
 # This is the place where Celery will look for asynchronous tasks
 
 from celery import task

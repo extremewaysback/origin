@@ -33,10 +33,11 @@ def order_create(request):
             order=form.save()  #save the input information into database 
             for item in cart:  #save the products in cart into database
                 OrderItem.objects.create(order=order,product=item['product'],price=item['price'],quantity=item['quantity'])
-            #clear the cart information in session
+            # Clear the cart information in session
             cart.clear()
-            #launch asynchronous task
-            #order_created.delay(order.id)
+            # Launch asynchronous task
+            # Call delay() method of hte task to execute it asynchronously. The task will be added to the queue and will be executed by a worker as soon as possible.
+            order_created.delay(order.id) 
             
             #set the order in the session    
             request.session['order_id']=order.id   
