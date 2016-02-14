@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import djcelery
 
+
 djcelery.setup_loader()
 #Celery settings
 BROKER_URL='redis://h:p3ilg0snp5int2aidfaqtqmr84q@ec2-54-83-39-131.compute-1.amazonaws.com:25629'
@@ -38,6 +39,8 @@ ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running test
 
 INSTALLED_APPS = (
     'account',
+    'djcelery',
+    'grappelli',
     'django.contrib.admin',#this is an administration site
     'django.contrib.auth',#this is an authentication framework
     'django.contrib.contenttypes',#track all of the models installed in the project
@@ -58,7 +61,6 @@ INSTALLED_APPS = (
     'orders',
     'paypal.standard.ipn', #django-paypal to integrate PayPal payments standard with Instance Payment Notification (IPN) for handling payment notifications
     'payment',
-    'djcelery',
 )
 
 SITE_ID=3

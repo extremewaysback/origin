@@ -20,11 +20,14 @@ from blog.sitemaps import PostSitemap
 import views
 from django.conf import settings
 from django.conf.urls.static import static
+from filebrowser.sites import site
 
 sitemaps={'posts':PostSitemap}
 
 urlpatterns = [
     url(r'^account/',include('account.urls')),
+    url(r'admin/filebrowser/', include(site.urls)),
+    url(r'grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.origin, name='origin'),  #show the origin homepage of the website
     url(r'^contact/',include('contact.urls')),
