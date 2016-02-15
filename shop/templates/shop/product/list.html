@@ -17,6 +17,8 @@
         <th>Image</th>
         <th>Product</th>
         <th>Unit price</th>
+        <th>Stock</th>
+        <th>Description</th>
      </tr>
   </thead>
   <tbody>
@@ -28,6 +30,8 @@
             </a></td>
             <td><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></td>
             <td>${{ product.price }}</td>
+            <td>{{ product.stock }}</td>
+            <td>{{ product.description }}</td>
         </div>
       </tr>
     {% endfor %}
