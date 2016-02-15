@@ -1,0 +1,158 @@
+html,body{
+          height:140%
+          }
+
+body
+  {
+  margin:0px;
+  font: .9125em/1.5 Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+  color: #333;
+  }
+
+header, 
+nav, 
+section, 
+article, 
+aside, 
+footer {
+		display: block;
+	   }
+
+a:hover{
+        color:#722;
+        }
+
+nav {
+    position:fixed;
+    width:100%;
+	z-index:10000;
+    text-align:right;
+	font-size: 0.9em;
+	margin: 0;
+	padding: 0.05px 0px;
+	background-color:rgba(86,73,140,0.5);
+	}
+	nav li {
+			display: inline;
+			margin: 0 5px;
+			}
+
+			nav a {
+				padding: 0.1px 8px;
+				text-decoration:none;
+				color:yellow;
+			}
+
+	nav div {
+	        color:blue;
+	        font-size:1.5em;
+	        position:absolute;
+	        left:20px;
+	        top:6px;
+	        }
+	nav span{
+	        color:black;
+	        font-size:0.5em;
+	        }
+	        
+
+header {
+       margin:0;
+       padding:50px 30% 0 0;
+       text-align:center;
+       background-color:rgba(86,73,140,0.5);
+       color:black; 
+       }
+ 
+       
+section {
+        float: left;
+		width: 68%;
+		padding-left:2%;
+		position: relative;
+		}
+		
+        section a {
+              text-decoration:none;
+              color:#69a;
+              }
+        section article {
+              margin-bottom:50px;
+              }
+		section header{
+              margin:0;
+              padding:0;
+              background-color:white;
+              }   
+
+
+figure {
+       margin-left:0;
+       }
+
+figcaption {
+           text-align:center;
+           }
+
+
+aside {
+       float:right;
+       margin-top:0;
+       padding: 0px 1px 2px 30px;
+       position: relative;
+	   width: 25%;
+	   border-left-style:dotted;
+	   border-width:1px;
+	   border-color:#2f3;
+      }
+      aside h2 {
+		       color: #888;
+		       font-size: 1.8em;
+		       text-align:left;
+		       }
+			aside .tag-cloud {
+				padding: 15px 20px 10px 0;
+				text-align: left;
+			    }
+				aside .tag-cloud li {
+					display: inline
+				}
+				aside .tag-cloud a {
+					color: #69a
+				}
+				aside .tag-cloud a:hover {
+					color: #a67
+				}
+				aside .tag-cloud .w1 {
+					font-size: .8em
+				}
+				aside .tag-cloud .w2 {
+					font-size: 1em;
+					color:green;
+				}
+				aside .tag-cloud .w3 {
+					font-size: 1.1em;
+					color:blue;
+				}
+				aside .tag-cloud .w4 {
+					font-size: 1.2em
+				}
+				aside .tag-cloud .w5 {
+					font-size: 1.3em
+				}
+				aside .tag-cloud .w6 {
+					font-size: 1.4em;
+				}
+				aside .tag-cloud .w7 {
+					font-size: 1.5em
+				}
+				aside .tag-cloud .w8 {
+					font-size: 1.6em
+				}
+				aside .tag-cloud .w9 {
+					font-size: 1.8em
+				}
+				aside .tag-cloud .w10 {
+					font-size: 2em
+				}
+
