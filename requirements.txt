@@ -18,3 +18,4 @@ django-celery
 redis==2.10.5
 django-filebrowser==3.6.1
 django-grappelli==2.7.3
+uwsgi==2.0.12
