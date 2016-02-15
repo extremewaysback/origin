@@ -39,8 +39,8 @@ ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running test
 
 INSTALLED_APPS = (
     'account',
-    'djcelery',
-    'grappelli',
+    #'djcelery',
+    #'grappelli',
     'django.contrib.admin',#this is an administration site
     'django.contrib.auth',#this is an authentication framework
     'django.contrib.contenttypes',#track all of the models installed in the project
