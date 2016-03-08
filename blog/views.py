@@ -124,7 +124,8 @@ def post_search(request):
         if form.is_valid():
             cd=form.cleaned_data
             r=SearchQuerySet().models(Post).filter(content=cd['query'])#return a SearchQuerySet
-            results=[Post.objects.filter(pk=i.pk)[0] for i in r] #assign a list of objects to the reuslts
+            #pk_list=[i.pk for i in r]
+            results=Post.objects.filter(pk__in=r.values_list('pk',flat=True)) #assign a list of objects to the reuslts
             #count total results
             total_results=r.count()
             
