@@ -1,1 +1,1 @@
-web: gunicorn origin.wsgi --log-file -
+web: --socket 127.0.0.1:3031 --wsgi-file origin/wsgi.py --master --processes 4 --threads 2 --stats 127.0.0.1:9191
