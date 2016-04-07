@@ -17,7 +17,7 @@ djcelery.setup_loader()
 BROKER_URL='redis://h:p3ilg0snp5int2aidfaqtqmr84q@ec2-54-83-39-131.compute-1.amazonaws.com:25629'
 CELERY_RESULT_BACKEND='redis://h:p3ilg0snp5int2aidfaqtqmr84q@ec2-54-83-39-131.compute-1.amazonaws.com:25629'
 
-
+#Get this file's absolute directory>parent's parent directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -61,7 +61,17 @@ INSTALLED_APPS = (
     'orders',
     'paypal.standard.ipn', #django-paypal to integrate PayPal payments standard with Instance Payment Notification (IPN) for handling payment notifications
     'payment',
+    'storages',
 )
+
+
+DEFAULT_FILE_STORAGE='storages.backends.s3boto.S3BotoStorage'
+AWS_S3_SECURE_URLS=False  # use http instead of https
+AWS_QUERYSTRING_AUTH=False  # don't add complex authentication-related query parameters for requests
+AWS_S3_ACCESS_KEY_ID='AKIAJXXTVPVPLRH6YR4A'
+AWS_S3_SECRET_ACCESS_KEY='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'
+AWS_STORAGE_BUCKET_NAME='origintbucket'
+
 
 SITE_ID=3
 # django-paypal settings
@@ -148,6 +158,12 @@ DATABASES = {
         'PORT':'5432',
     }
 }
+
+
+ADMINS=(
+   ('Ibelin Gan','extremewaysback@hotmail.com'),
+   )
+
 
 
 #Add an SMTP configuration, so that django is able to send e-mails.
