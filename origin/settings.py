@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY='j^%32111th*jd#&h&=z__i6x+h(@2d2_c&ie^^k*7xyp#@&96$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []   #is not applied while debug mode is on or when running tests.
 #Once you are going to move your site to production and set DEBUG to False, you
