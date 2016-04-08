@@ -68,11 +68,7 @@ INSTALLED_APPS = (
 
 
 DEFAULT_FILE_STORAGE='storages.backends.s3boto.S3BotoStorage'
-AWS_S3_SECURE_URLS=False  # use http instead of https
-AWS_QUERYSTRING_AUTH=False  # don't add complex authentication-related query parameters for requests
-AWS_S3_ACCESS_KEY_ID='AKIAJXXTVPVPLRH6YR4A'
-AWS_S3_SECRET_ACCESS_KEY='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'
-AWS_STORAGE_BUCKET_NAME='origintbucket'
+
 
 
 SITE_ID=3
